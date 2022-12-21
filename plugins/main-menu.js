@@ -14,9 +14,9 @@ const defaultMenu = {
 
 %readmore
 `.trimStart(),
-  header: '╔═════ %category ═══✆',
-  body: '╠⪼⃟ ⃟➢ %cmd %isPremium %islimit',
-  footer: '╚════════════⃟ ⃟➵',
+  header: '乂 *%category*',
+  body: '×    %cmd %isPremium %islimit',
+  footer: '\n',
   after: ``,
 }
 let handler = async (m, { conn, usedPrefix: _p, __dirname, args }) => {
@@ -268,6 +268,7 @@ let usrs = db.data.users[m.sender]
     let wktuwib = `${wibh} H ${wibm} M ${wibs} S`
  
 let tek = `
+        乂 Holo Bot menu
 
 ╭───────「 *Info Kamu* 」──────
 ├───────────•______________/
