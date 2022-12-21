@@ -11,7 +11,7 @@ let handler = async (m, { conn, args, command }) => {
 let totalf = Object.values(global.plugins).filter(
     (v) => v.help && v.tags
   ).length;
- await conn.sendButton(m.chat, `⻝ "ʜᴏʟᴏ ʙᴏᴛ"\n▬▭▬▭▬▭▬▭▬▬▭▬▭▬\nʀ  ᴜ  ʟ  ᴇ  s   ༆\n\n◉ ᴊᴀɴɢᴀɴ sᴘᴀᴍ ʙᴏᴛ\n◉ ᴊᴀɴɢᴀɴ ᴋɪʀɪᴍ ʙᴜɢ/ᴠɪʀᴛᴇx/ᴠɪʀᴋᴏɴ ᴅʟʟ\n\n◉ ウイルスをボットに送信しない\n◉ ボットにスパムを送信しないでください\n\n\n▬▭▬▭▬▭▬▭▬▬▭▬▭▬\n\n\nʰ ᵒ ˡ ᵒ      ᵇ ᵒ ᵗ`,wm + '\n\n' + botdate, thumbdoc, [['Semua Menu','.? all'],['List Menu','.holoo']], m, {
+ await conn.sendButton(m.chat, `⻝ "ʜᴏʟᴏ ʙᴏᴛ"\n\n\nʀ  ᴜ  ʟ  ᴇ  s   ༆\n\n◉ ᴊᴀɴɢᴀɴ sᴘᴀᴍ ʙᴏᴛ\n◉ ᴊᴀɴɢᴀɴ ᴋɪʀɪᴍ ʙᴜɢ/ᴠɪʀᴛᴇx/ᴠɪʀᴋᴏɴ ᴅʟʟ\n\n◉ ウイルスをボットに送信しない\n◉ ボットにスパムを送信しないでください\n\n\n`,wm + '\n\n' + botdate, thumbdoc, [['List Menu','.holoo'],['Semua Menu','.? All']], m, {
 contextInfo: { externalAdReply :{
                         mediaUrl: '',
                         mediaType: 2,
@@ -27,7 +27,7 @@ contextInfo: { externalAdReply :{
 
 handler.help = ['menu']
 handler.tags = ['group']
-handler.command = /^(menu|help|co)$/i
+handler.command = /^(menu|help|co|test|holooo)$/i
 handler.register = false
 
 export default handler
