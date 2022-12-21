@@ -5,7 +5,7 @@ let handler = async (m, { conn, usedPrefix, text }) => {
 	    let time = global.db.data.users[m.sender].lastparming + 1800000
   if (new Date - global.db.data.users[m.sender].lastparming< 1800000) throw `Anda sudah lelah untuk bekerja\nTunggu selama ${msToTime(time - new Date())} lagi`
 	let wood = `${Math.floor(Math.random() * 50)}`.trim()
-	let money = `${Math.floor(Math.random() * 50000)}`.trim()
+	let money = `${Math.floor(Math.random() * 10000)}`.trim()
 	
 	global.db.data.users[m.sender].wood += wood * 1
 	global.db.data.users[m.sender].money += money * 1
@@ -16,9 +16,9 @@ let handler = async (m, { conn, usedPrefix, text }) => {
 					conn.reply(m.chat, `Waktunya nebang lagi`, m)
 					}, timeout)
 }
-handler.help = ['Nebang']
+handler.help = ['nebang']
 handler.tags = ['rpg']
-handler.command = /^(nebang|)/i
+handler.command = /^(nebang)/i
 handler.owner = false
 handler.mods = false
 handler.premium = false
