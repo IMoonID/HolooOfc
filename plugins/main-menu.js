@@ -288,10 +288,10 @@ let tek = `
 `
 const listMessage = {
   text: tek,
-  footer: 'Dev: Holo Bot',
+  footer: 'Jangan spam ya kak\n\n',
   mentions: await conn.parseMention(tek),
   title: ``,
-  buttonText: `Click For Menu`,
+  buttonText: `乂 Pilih menu`,
   sections
 }
   if (teks == '404') {
