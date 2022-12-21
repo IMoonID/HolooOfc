@@ -4,13 +4,13 @@ let handler = async (m, { usedPrefix }) => {
     let timers = (cooldown - (new Date - user.lastadventure))
     if (user.health < 80) return conn.sendButton(m.chat,
 '*–––––『 LOW HEALTH 』–––––*',
-`ʏᴏᴜʀ ʜᴇᴀʟᴛʜ ɪs ʙᴇʟᴏᴡ 80﹗
-ᴩʟᴇᴀsᴇ ʜᴇᴀʟ ❤ ғɪʀsᴛ ᴛᴏ ᴀᴅᴠᴇɴᴛᴜʀᴇ ᴀɢᴀɪɴ.`.trim(), './media/lowhealth.jpg', [
+`Datahmu kurang dari 80﹗
+Heal terlebih dahulu sebelum adventure.`.trim(), './media/lowhealth.jpg', [
 [`ʜᴇᴀʟ ❤`, `${usedPrefix}heal`]
 ], m, {asLocation: true})
     if (new Date - user.lastadventure <= cooldown) return conn.sendButton(m.chat, 
 '*–––––『 COOLDOWN 』–––––*',
-`ʏᴏᴜ'ᴠᴇ ᴀʟʀᴇᴀᴅʏ *ᴀᴅᴠᴇɴᴛᴜʀᴇ*, ᴩʟᴇᴀsᴇ ᴡᴀɪᴛ ᴛɪʟʟ ᴄᴏᴏʟᴅᴏᴡɴ ғɪɴɪsʜ.
+`kamu sudah adventure, mohon tunggu cooldown selesai.
 
 ⏱️ ${timers.toTimeString()}`.trim(), './media/cooldown.jpg', [
 [`ɪɴᴠᴇɴᴛᴏʀʏ`, `${usedPrefix}inventory`],
@@ -23,23 +23,23 @@ let handler = async (m, { usedPrefix }) => {
         user[lost] -= total * 1
         if (total) text += `\n${global.rpg.emoticon(lost)}${lost}: ${total}`
     }
-    text += '\n\n🔖 ᴀᴅᴠᴇɴᴛᴜʀᴇ ʀᴇᴡᴀʀᴅ ʀᴇᴄᴇɪᴠᴇᴅ :'
+    text += '\n\nKamu sudah adventure, dan mendapatkan :'
     for (const rewardItem in rewards.reward) if (rewardItem in user) {
         const total = rewards.reward[rewardItem].getRandom()
         user[rewardItem] += total * 1
         if (total) text += `\n⮕ ${global.rpg.emoticon(rewardItem)}${rewardItem}: ${total}`
     }
     conn.sendButton(m.chat, 
-    '*–––––『 ADVENTURE 』–––––*', 
+    '*–––––『 Adventure 』–––––*', 
     text.trim(), './media/adventure.jpg', [
-[`ɪɴᴠᴇɴᴛᴏʀʏ`, `${usedPrefix}inventory`],
-[`ᴅᴀɪʟʏ`, `${usedPrefix}daily`]
+[`My inventory`, `${usedPrefix}inventory`],
+[`Back to menu`, `${usedPrefix}holoo`]
 ], m, {asLocation: true})
     user.lastadventure = new Date * 1
 }
 handler.help = ['adventure']
 handler.tags = ['rpg']
-handler.command = /^(adventure|adv)$/i
+handler.command = /^(adventure|adv|berpetualang)$/i
 
 handler.cooldown = cooldown
 handler.disabled = false
