@@ -57,11 +57,11 @@ export async function handler(chatUpdate) {
                 if (!isNumber(user.laper)) 
                     user.laper = 100
                 if (!isNumber(user.limit))
-                    user.limit = 10
+                    user.limit = 15
                 if (!isNumber(user.lastclaim))
                     user.lastclaim = 0
                 if (!isNumber(user.joinlimit)) 
-                    user.joinlimit = 1
+                    user.joinlimit = 0
                 if (!isNumber(user.pc)) 
                     user.pc = 0
                 if (!isNumber(user.ojekk)) 
@@ -355,7 +355,7 @@ if (!isNumber(user.ayam)) user.ayam = 0
             } else
                 global.db.data.users[m.sender] = {
                     exp: 0,
-                    limit: 20,
+                    limit: 15,
                     lastclaim: 0,
                     registered: false,
                     spammer: 0,
@@ -367,7 +367,7 @@ if (!isNumber(user.ayam)) user.ayam = 0
                     laper: 100,
                     stamina : 100,
                     pc : 0,
-                    joinlimit: 1,
+                    joinlimit: 0,
                     coin: 0,
                     age: -1,
                     regTime: -1,
@@ -567,7 +567,7 @@ esteh: 0,
                 if (!('sDemote' in chat))
                     chat.sDemote = ''
                 if (!('delete' in chat))
-                    chat.delete = true
+                    chat.delete = false
                 if (!('antiLink' in chat))
                     chat.antiLink = false
                 if (!('antiSticker' in chat)) 
@@ -611,7 +611,7 @@ esteh: 0,
     })
 }
           global.kontak2 = [
-        ['0', 'Whatsapp', 'Devoloper', 'Creator Bot', true],
+        ['6288221354110', 'NexBotz', 'Creator Bot', 'Creator Bot', false],
         [`${nomorown}`, `${nameown}`, 'Owner Bot', 'Owner Bot', true]
         ]
             let settings = global.db.data.settings[this.user.jid]
@@ -620,7 +620,7 @@ esteh: 0,
                 if (!('self' in settings)) settings.self = false
                 if (!('autoread' in settings)) settings.autoread = true
                 if (!('restrict' in settings)) settings.restrict = true
-                if (!('autorestart' in settings)) settings.autorestart = true
+                if (!('autorestart' in settings)) settings.autorestart = false
                 if (!('restartDB' in settings)) settings.restartDB = 0
                 if (!isNumber(settings.status)) settings.status = 0 // ini buat data set Status, tambah disini
                 if (!('anticall' in settings)) settings.anticall = true
@@ -823,15 +823,15 @@ esteh: 0,
                 m.isCommand = true
                 let xp = 'exp' in plugin ? parseInt(plugin.exp) : 17 // XP Earning per command
                 if (xp > 200)
-                    this.sendButton(m.chat, `*Sepertinya Kamu Bermain Curang, Menggunakan Calculator*`, author, null, [['Beli Limit', '/buy limit'], ['Back To Menu', '/menu']] , m)
+                    this.sendButton(m.chat, `*Sepertinya Kamu Bermain Curang, Menggunakan Calculator*`, author, null, [['Buy Limit', '/buy limit'], ['Menu', '/menu']] , m)
                 else
                     m.exp += xp
                 if (!isPrems && plugin.limit && global.db.data.users[m.sender].limit < plugin.limit * 1) {
-                    this.sendButton(m.chat, `*Maaf Limit Anda Habis, Beberapa Command Tidak Bisa Di Akses*`, author, null, [['Beli Limit', '/buy limit'], ['Back To Menu', '/menu']] , m)
+                    this.sendButton(m.chat, `[❗] *Limit Anda Habis, Beberapa Command Tidak Bisa Di Akses*`, author, null, [['Buy Limit', '/buy limit'], ['Menu', '/menu']] , m)
                     continue // Limit habis
                 }
                 if (plugin.level > _user.level) {
-                    this.sendButton(m.chat, `Diperlukan level *${plugin.level}* untuk menggunakan perintah ini. Level kamu *${_user.level}*\n*${plugin.level}* level diperlukan untuk menggunakan perintah ini. Level Anda adalah *${_user.level}*`, author, null,[['Oke', 'ok']] , m)
+                    this.sendButton(m.chat, `[💬] Diperlukan level *${plugin.level}* untuk menggunakan perintah ini. Level kamu *${_user.level}🎋*\n*${plugin.level}* level is required to use this command. Your level is *${_user.level}🎋*`, author, null,[['Ok', 'ok']] , m)
                     continue // If the level has not been reached
                 }
                 let extra = {
@@ -873,7 +873,7 @@ esteh: 0,
                             for (let [jid] of global.owner.filter(([number, _, isDeveloper]) => isDeveloper && number)) {
                                 let data = (await conn.onWhatsApp(jid))[0] || {}
                                 if (data.exists)
-                                    m.reply(`*📮Hello Owner*\n\n_Laporan Eror terdeteksi_\n\nEROR DI 🗂️ Plugin:* ${m.plugin}\n*📤 Dari:* ${m.sender}\n*🗳️ID:* ${m.chat}\n*📑 Command Eror:* ${usedPrefix}${command} ${args.join(' ')}\n⚠️ *Logs Eror:*\n\n\`\`\`${text}\`\`\``.trim(), data.jid)
+                                    m.reply(`*📮HAY OWNER*\n\n_Laporan Eror terdeteksi_\n\nEROR DI 🗂️ Plugin:* ${m.plugin}\n*📤 Dari:* ${m.sender}\n*🗳️ID:* ${m.chat}\n*📑 Command Eror:* ${usedPrefix}${command} ${args.join(' ')}\n⚠️ *Logs Eror:*\n\n\`\`\`${text}\`\`\``.trim(), data.jid)
                             }
                         m.reply(text)
                     }
@@ -1028,7 +1028,7 @@ Untuk mematikan fitur ini, ketik
 *.off antidelete*
 
 Untuk menghapus pesan yang dikirim BOT, reply pesan dengan perintah
-*.delete*`, author, [['Off, '.off antidelete'],['Menu Holo Bot', '.menu']], msg, adReply)
+*.delete*`, author, [['OFF FITURE', '.off antidelete'],['MENU', '.menu']], msg, adReply)
         this.copyNForward(msg.chat, msg).catch(e => console.log(e, msg))
     } catch (e) {
         console.error(e)
@@ -1040,7 +1040,7 @@ dfail
  */
 global.dfail = (type, m, conn) => {
     let imgr = flaaa.getRandom()
-    let nmsr = `Hai *@${m.sender.split("@")[0]}*, `
+    let nmsr = `👋 Hai *@${m.sender.split("@")[0]}*, `
     let msg = {
         rowner: `${nmsr}\n 
 Perintah ini hanya dapat digunakan oleh *OWNER* !`,
@@ -1065,12 +1065,12 @@ RPG tidak aktif, Silahkan hubungi Team Bot Discussion Untuk mengaktifkan fitur i
         restrict: `${nmsr}\n
 Fitur ini di *disable* !`
     }[type]
-    if (msg) return conn.sendButton(m.chat, danied, msg, `https://telegra.ph/file/7548c80d7040e7c8f0440.jpg`, [['Menu Holo Bot', '.menu'],['Pembuat Bot', '.owner']],m)
+    if (msg) return conn.sendButton(m.chat, danied, msg, `${imgr + 'Accses Danied'}`, [['Back To Menu', '.menu'],['Owner', '.menu']],m)
     
      let msgg = {
     	unreg: `${nmsr}\nSilahkan Login ke database terlebih dahulu untuk menggunakan bot ini lebih lanjut *Click button di bawah*\n\n*Kalian bisa ikuti langkah Login selanjutnya* ?`
 }[type]
-if (msgg) return conn.sendButton(m.chat, `Login/Register`, msgg, `https://telegra.ph/file/5752d82fdcc7b5ded0cbf.jpg`, [['Logim', '/verify']],m)
+if (msgg) return conn.sendButton(m.chat, `Login`, msgg, `${imgr + 'Verify'}`, [['Login/Verikasi', '/verify']],m)
 }    
 let file = global.__filename(import.meta.url, true)
 watchFile(file, async () => {
