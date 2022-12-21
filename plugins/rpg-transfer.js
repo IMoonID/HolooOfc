@@ -12,7 +12,7 @@ async function handler(m, { conn, args, usedPrefix, command }) {
     let lol = `Use format ${usedPrefix}${command} [type] [value] [number]
 example ${usedPrefix}${command} money 9999 @621927237001
 
-📍 Transferable items
+Item yang bisa di transfer
 ${item.map(v => `${rpg.emoticon(v)}${v}`.trim()).join('\n')}
 `.trim()
     const type = (args[0] || '').toLowerCase()
@@ -25,11 +25,13 @@ ${item.map(v => `${rpg.emoticon(v)}${v}`.trim()).join('\n')}
     let confirm = `
 *––––––『 Transfer 』––––––*
 
-*🪴️ Tipe:* ${type} ${rpg.emoticon(type)}${special(type)}
-*🧮 Jumlah:* ${count} 
-*📨 Untuk:* @${(who || '').replace(/@s\.whatsapp\.net/g, '')}
+*Item :* ${type} ${rpg.emoticon(type)}${special(type)}
 
-⏰ Timeout *60* detik
+*Berjumlah:* ${count} 
+
+*Penerima:* @${(who || '').replace(/@s\.whatsapp\.net/g, '')}
+
+Waktu Transfer *60* detik
 `.trim()
     let c = wm
     conn.sendButton(m.chat, confirm, c, null, [['Terima️'], ['Tolak️']], m, { mentions: [who] })
@@ -39,7 +41,7 @@ ${item.map(v => `${rpg.emoticon(v)}${v}`.trim()).join('\n')}
         message: m,
         type,
         count,
-        timeout: setTimeout(() => (m.reply('Timeout'), delete confirmation[m.sender]), 60 * 1000)
+        timeout: setTimeout(() => (m.reply('Transfer Timeout'), delete confirmation[m.sender]), 60 * 1000)
     }
 }
 
