@@ -5,17 +5,17 @@ let handler = async (m, { usedPrefix }) => {
     if (user.health < 80) return conn.sendButton(m.chat,
 '*–––––『 LOW HEALTH 』–––––*',
 `Datahmu kurang dari 80﹗
-Heal terlebih dahulu sebelum adventure.`.trim(), './media/lowhealth.jpg', [
+Heal terlebih dahulu sebelum adventure.`.trim(), 'https://telegra.ph/file/5b025d670769ee827c6b8.jpg', [
 [`Heal`, `${usedPrefix}heal`]
-], m, {asLocation: true})
+], m, {asLocation: false})
     if (new Date - user.lastadventure <= cooldown) return conn.sendButton(m.chat, 
 '*–––––『 COOLDOWN 』–––––*',
 `kamu sudah adventure, mohon tunggu cooldown selesai.
 
-⏱️ ${timers.toTimeString()}`.trim(), './media/cooldown.jpg', [
+⏱️ ${timers.toTimeString()}`.trim(), 'https://telegra.ph/file/0a17a331938fde04add4b.jpg', [
 [`ɪɴᴠᴇɴᴛᴏʀʏ`, `${usedPrefix}inventory`],
 [`ᴅᴀɪʟʏ`, `${usedPrefix}daily`]
-], m, {asLocation: true})
+], m, {asLocation: false})
     const rewards = reward(user)
     let text = 'You\'ve been adventure and decrease'
     for (const lost in rewards.lost) if (user[lost]) {
@@ -31,10 +31,10 @@ Heal terlebih dahulu sebelum adventure.`.trim(), './media/lowhealth.jpg', [
     }
     conn.sendButton(m.chat, 
     '*–––––『 Adventure 』–––––*', 
-    text.trim(), './media/adventure.jpg', [
+    text.trim(), 'https://telegra.ph/file/acfbb48743f37bcdd96ae.jpg', [
 [`My inventory`, `${usedPrefix}inventory`],
 [`Back to menu`, `${usedPrefix}holoo`]
-], m, {asLocation: true})
+], m, {asLocation: false})
     user.lastadventure = new Date * 1
 }
 handler.help = ['adventure']
