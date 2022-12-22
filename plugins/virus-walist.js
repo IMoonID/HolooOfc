@@ -12,9 +12,9 @@ const sections = [
    {
     title: `✃ INFO`,
 	rows: [
-	    {title: "🔮WhatsApp Imune 1", rowId: '.waimune1', description: 'Jangan lupa Subs Yt ᴹᴿ᭄ King Of Bear ×፝֟͜× Offcial' },
-	    {title: "🔮WhatsApp Imune 2", rowId: '.waimune2', description: 'Jangan lupa Subs Yt ᴹᴿ᭄ King Of Bear ×፝֟͜× Offcial' },
-	{title: "🔮WhatsApp Gb Kebal 1", rowId: '.wagb1', description: 'Jangan lupa Subs Yt ᴹᴿ᭄ King Of Bear ×፝֟͜× Offcial' },
+	    {title: "🔮WhatsApp Imune 1", rowId: '.waimune1', description: '' },
+	    {title: "🔮WhatsApp Imune 2", rowId: '.waimune2', description: '' },
+	{title: "🔮WhatsApp Gb Kebal 1", rowId: '.wagb1', description: '' },
 	{title: "🔮WhatsApp Gb Kebal 2", rowId: '.wagb2', description: 'Download WhatsApp Kebal' },
 	]
     }, {
@@ -29,7 +29,7 @@ const listMessage = {
   text: ' ',
   footer: info,
   title: null,
-  buttonText: "📛Download",
+  buttonText: "Download",
   sections
 }
 await conn.sendMessage(m.chat, listMessage, { quoted: m})
