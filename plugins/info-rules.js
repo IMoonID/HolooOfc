@@ -1,103 +1,142 @@
+import { cpus as _cpus, totalmem, freemem } from 'os'
+import util from 'util'
+import os from 'os'
 import fs from 'fs'
-import moment from 'moment-timezone'
-let handler = async (m, { conn, usedPrefix, __dirname, text, command }) => {
-let tag = `@${m.sender.replace(/@.+/, '')}`
-  let mentionedJid = [m.sender]
-let name = conn.getName(m.sender)
-await m.reply(`*_${md} @${m.sender.split(`@`)[0]}..._*`)
-let esce = `text nya `
-let flaaa2 = [
-'https://flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=water-logo&script=water-logo&fontsize=90&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&fillTextColor=%23000&shadowGlowColor=%23000&backgroundColor=%23000&text=',
-'https://flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=crafts-logo&fontsize=90&doScale=true&scaleWidth=800&scaleHeight=500&text=',
-'https://flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=amped-logo&doScale=true&scaleWidth=800&scaleHeight=500&text=',
-'https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=sketch-name&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&fillTextType=1&fillTextPattern=Warning!&text=',
-'https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=sketch-name&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&fillTextType=1&fillTextPattern=Warning!&fillColor1Color=%23f2aa4c&fillColor2Color=%23f2aa4c&fillColor3Color=%23f2aa4c&fillColor4Color=%23f2aa4c&fillColor5Color=%23f2aa4c&fillColor6Color=%23f2aa4c&fillColor7Color=%23f2aa4c&fillColor8Color=%23f2aa4c&fillColor9Color=%23f2aa4c&fillColor10Color=%23f2aa4c&fillOutlineColor=%23f2aa4c&fillOutline2Color=%23f2aa4c&backgroundColor=%23101820&text=']
-let rules = `➯ *Tɪᴅᴀᴋ Sᴘᴀᴍ Bᴏᴛ*
- _Kebijakan privasi atau Private without being in public_
-
-
-
-• *Kebijakan Privasi:*
-1. Bot tidak akan merekam data riwayat chat user.
-2. Bot tidak akan menyebarkan nomor users.
-3. Bot tidak akan menyimpan media yang dikirimkan oleh users.
-4. Bot tidak akan menyalah gunakan data data users.
-5. Owner HoloBot berhak melihat data riwayat chat users.
-6. Bot berhak melihat status users.
-7. Bot dapat melihat riwayat chat, dan media yang dikirimkan users.
-
-• Jika ada bug/eror di website kami saya mohon untuk Report nya, tanpa biaya dan aman
-
-_Cara penggunaan Holo Bot Agar terhindar dari Banned_
-
-• *Peraturan Holo Bot:*
-1. Users dilarang menelpon maupun memvideo call nomor bot.
-2. Users dilarang mengirimkan berbagai bug, virtex, dll ke nomor bot.
-3. Users diharap tidak melakukan spam dalam penggunaan bot.
-4. Users dilarang menambahkan nomor bot secara illegal, untuk menambahkan silahkan hubungi Owner.
-5. Users diharap untuk tidak menyalah gunakan fitur fitur bot.
-
-• *Note:*
-1. Jika ada yang menjual/beli/sewa bot atas nomor ini, harap segera hubungi owner!
-2. Jika ingin donasi bisa langsung aja ya social payment Dana 
-3. jika ingin membeli scrip bot Whatsapp bisa langsung Hubungi owner
-3. Ketik .sewa Jika Ingin SewaBot 
-
-•Agar terhindar dari Suspand/Ban kalian bisa membaca juga di Peraturan kami.
-
-•Perlu kalian tahu bahwa kami menjaga Privasi dari data-data anda!
-
-• *Syarat Ketentuan Bot:*
-
-1. HoloBot akan keluar dari group jika ada salah satu member melanggar peraturan.
-2. HoloBot-MD dapat mem-ban users secara sepihak terlepas dari users salah atau tidak.
-3. HoloBot tidak akan bertanggungjawab atas apapun yang users lakukan terhadap fitur bot.
-4. HoloBot akan memberlakukan hukuman: block atau ban terhadap users yang melanggar peraturan.
-5. HoloBot bertanggung jawab atas kesalahan fatal dalam programing maupun owner.
-❏┳━━◩
-┍┛
-┆⟥⟤ ➠ ${global.bottime}
-└─┈⟅
-${global.botdate}`
-let nth = `☰⟥⟝⟞⟝❨ *Rᴜʟᴇs Bᴏᴛ* ❩⟞⟝⟞⟤☰`
-conn.send3ButtonImg(m.chat, `${pickRandom(flaaa2)}` + `${ucapan()} ` + `${name}`, nth, rules, 'Menu', '.menu', 'Owner', '.owner', 'Credit', '.credit', m, { contextInfo: { externalAdReply: { showAdAttribution: true,
-    mediaUrl: 'nekopoi.care',
-    mediaType: 2, 
-    description: sgc,
-    title: "Halo Kak",
-    body: wm,
-    thumbnail: fs.readFileSync('./thumbnail.jpg'),
-    sourceUrl: 'nekopoi.care',
-     }}
+import fetch from 'node-fetch'
+import osu from 'node-os-utils'
+import { performance } from 'perf_hooks'
+import { sizeFormatter } from 'human-readable'
+let format = sizeFormatter({
+  std: 'JEDEC', // 'SI' (default) | 'IEC' | 'JEDEC'
+  decimalPlaces: 2,
+  keepTrailingZeroes: false,
+  render: (literal, symbol) => `${literal} ${symbol}B`,
+})
+let handler = async (m, { conn, isRowner}) => {
+	let _muptime
+    if (process.send) {
+      process.send('uptime')
+      _muptime = await new Promise(resolve => {
+        process.once('message', resolve)
+        setTimeout(resolve, 1000)
+      }) * 1000
+    }
+    let muptime = clockString(_muptime)
+  const chats = Object.entries(conn.chats).filter(([id, data]) => id && data.isChats)
+  const groupsIn = chats.filter(([id]) => id.endsWith('@g.us')) //groups.filter(v => !v.read_only)
+  const used = process.memoryUsage()
+  const cpus = _cpus().map(cpu => {
+    cpu.total = Object.keys(cpu.times).reduce((last, type) => last + cpu.times[type], 0)
+    return cpu
   })
-}
-handler.help = ['rules']
-handler.tags = ['info']
-handler.command = /^(rules|rule)$/i
+  const cpu = cpus.reduce((last, cpu, _, { length }) => {
+    last.total += cpu.total
+    last.speed += cpu.speed / length
+    last.times.user += cpu.times.user
+    last.times.nice += cpu.times.nice
+    last.times.sys += cpu.times.sys
+    last.times.idle += cpu.times.idle
+    last.times.irq += cpu.times.irq
+    return last
+  }, {
+    speed: 0,
+    total: 0,
+    times: {
+      user: 0,
+      nice: 0,
+      sys: 0,
+      idle: 0,
+      irq: 0
+    }
+  })
 
+  let old = performance.now()
+  await m.reply(`*_${md} @${m.sender.split(`@`)[0]}..._*`)
+  let neww = performance.now()
+  let session = fs.statSync(authFile)
+  let speed = neww - old
+  let zyko = 'https://telegra.ph/file/0b523d1d86ca372a408d2.jpg'
+  let runtt = `*s ᴘ ᴇ ᴇ ᴅ*
+${Math.round(neww - old)} ms
+${speed} ms
+
+*ʀ ᴜ ɴ ᴛ ɪ ᴍ ᴇ* 
+${muptime}
+${readMore}
+*ᴄ ʜ ᴀ ᴛ s*
+• *${groupsIn.length}* Group Chats
+• *${groupsIn.length}* Groups Joined
+• *${groupsIn.length - groupsIn.length}* Groups Left
+• *${chats.length - groupsIn.length}* Personal Chats
+• *${chats.length}* Total Chats
+
+
+*s ᴇ ʀ ᴠ ᴇ ʀ*
+*🛑 ʀᴀᴍ:* ${format(totalmem() - freemem())} / ${format(totalmem())}
+*🔵 ғʀᴇᴇRAM:* ${format(freemem())}
+*📑 sᴇssɪᴏɴ sɪᴢᴇ :* ${format(session.size)}
+*💻 ᴘʟᴀᴛғᴏʀᴍ :* ${os.platform()}
+*🧿 sᴇʀᴠᴇʀ :* ${os.hostname()}
+${readMore}
+NodeJS Memory Usage*
+${'```' + Object.keys(used).map((key, _, arr) => `${key.padEnd(Math.max(...arr.map(v => v.length)), ' ')}: ${format(used[key])}`).join('\n') + '```'}
+
+${cpus[0] ? `_Total CPU Usage_
+${cpus[0].model.trim()} (${cpu.speed} MHZ)\n${Object.keys(cpu.times).map(type => `- *${(type + '*').padEnd(6)}: ${(100 * cpu.times[type] / cpu.total).toFixed(2)}%`).join('\n')}
+
+_CPU Core(s) Usage (${cpus.length} Core CPU)_
+${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Object.keys(cpu.times).map(type => `- *${(type + '*').padEnd(6)}: ${(100 * cpu.times[type] / cpu.total).toFixed(2)}%`).join('\n')}`).join('\n\n')}` : ''}` 
+let fliveLoc22 = {
+            key: {
+            participant : '0@s.whatsapp.net'},
+            message: { "liveLocationMessage": { "title": gcname,"h": bottime, 'jpegThumbnail': fs.readFileSync('./thumbnail.jpg')}}
+           }
+await conn.send2ButtonDoc(m.chat, runtt, botdate, 'Owner', '.owner', 'Menu', '.Menu', fliveLoc22, {
+			contextInfo: {
+				forwardingScore: fsizedoc,
+				externalAdReply: {
+                    body: bottime,
+    containsAutoReply: true,
+    mediaType: 1,
+    mediaUrl: syt,
+    renderLargerThumbnail: true,
+    showAdAttribution: false,
+    sourceId: 'HoloBot',
+    sourceType: 'PDF',
+    previewType: 'PDF',
+    sourceUrl: wame,
+    thumbnail: await(await fetch(zyko)).buffer(),
+    thumbnailUrl: syt,
+    title: 'HoloBot',
+				}
+			}
+})
+/*await conn.send2ButtonVid(m.chat, pp, cap, botdate, '𝐋𝐢𝐬𝐭𝐌𝐞𝐧𝐮', '.listmenu', '𝐃𝐚𝐬𝐛𝗼𝐚𝐫𝐝', '.db', m, adReply)*/
+}
+
+/*await conn.relayMessage(m.chat, { requestPaymentMessage: {
+  noteMessage: { extendedTextMessage: { text: runtt,
+  currencyCodeIso4217: 'USD',
+  requestFrom: '0@s.whatsapp.net',
+  expiryTimestamp: 8600,
+  amount: 10000,
+  background: thumb
+}}}}, {})
+
+}*/
+handler.help = ['ping', 'speed']
+handler.tags = ['info', 'tools']
+
+handler.command = /^(testbotspeed)$/i
 export default handler
-
-function ucapan() {
-  const time = moment.tz('Asia/Jakarta').format('HH')
-  let res = "Selamat Malam"
-  if (time >= 4) {
-    res = "Selamat Pagi"
-  }
-  if (time >= 10) {
-    res = "Selamat Siang"
-  }
-  if (time >= 15) {
-    res = "Selamat Sore"
-  }
-  if (time >= 18) {
-    res = "Selamat Malam"
-  }
-  return res
-}
-
-function pickRandom(list) {
-  return list[Math.floor(Math.random() * list.length)]
-}
 
 const more = String.fromCharCode(8206)
 const readMore = more.repeat(4001)
+
+function clockString(ms) {
+  let d = isNaN(ms) ? '--' : Math.floor(ms / 86400000)
+  let h = isNaN(ms) ? '--' : Math.floor(ms / 3600000) % 24
+  let m = isNaN(ms) ? '--' : Math.floor(ms / 60000) % 60
+  let s = isNaN(ms) ? '--' : Math.floor(ms / 1000) % 60
+  return [d, ' *Days ☀️*\n ', h, ' *Hours 🕐*\n ', m, ' *Minute ⏰*\n ', s, ' *Second ⏱️* '].map(v => v.toString().padStart(2, 0)).join('')
+}
