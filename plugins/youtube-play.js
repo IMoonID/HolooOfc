@@ -1,6 +1,6 @@
 import { youtubeSearch } from '@bochilteam/scraper'
 let handler = async (m, { conn, command, text, usedPrefix }) => {
-  if (!text) throw `Use example ${usedPrefix}${command} Dj Gama Naufal`
+  if (!text) throw `乂 Playing Music\n\nContoh Penggunaan ${usedPrefix}${command} Dj Gama Naufal`
   let vid = (await youtubeSearch(text)).video[0]
   if (!vid) throw 'Video/Audio Tidak ditemukan'
   let { title, description, thumbnail, videoId, durationH, viewH, publishedTime } = vid
