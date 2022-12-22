@@ -1,9 +1,8 @@
 import { cpus as _cpus, totalmem, freemem } from 'os'
 import util from 'util'
 import os from 'os'
-import fs from 'fs'
-import fetch from 'node-fetch'
 import osu from 'node-os-utils'
+import fetch from 'node-fetch'
 import { performance } from 'perf_hooks'
 import { sizeFormatter } from 'human-readable'
 let format = sizeFormatter({
@@ -49,81 +48,110 @@ let handler = async (m, { conn, isRowner}) => {
       irq: 0
     }
   })
-
+  let NotDetect = 'Not Detect'
+        let cpux = osu.cpu
+        let cpuCore = cpux.count()
+        let drive = osu.drive
+        let mem = osu.mem
+        let netstat = osu.netstat
+        let HostN = osu.os.hostname()
+        let OS = osu.os.platform()
+        let ipx = osu.os.ip()
+        let cpuModel = cpux.model()
+        let cpuPer
+        let p1 = cpux.usage().then(cpuPercentage => {
+            cpuPer = cpuPercentage
+        }).catch(() => {
+            cpuPer = NotDetect
+        })
+        let driveTotal, driveUsed, drivePer
+        let p2 = drive.info().then(info => {
+                driveTotal = (info.totalGb + ' GB'),
+                driveUsed = info.usedGb,
+                drivePer = (info.usedPercentage + '%')
+        }).catch(() => {
+                driveTotal = NotDetect,
+                driveUsed = NotDetect,
+                drivePer = NotDetect
+        })
+        let ramTotal, ramUsed
+        let p3 = mem.info().then(info => {
+                ramTotal = info.totalMemMb,
+                ramUsed = info.usedMemMb
+        }).catch(() => {
+                ramTotal = NotDetect,
+                ramUsed = NotDetect
+        })
+        let netsIn, netsOut
+        let p4 = netstat.inOut().then(info => {
+                netsIn = (info.total.inputMb + ' MB'),       
+                netsOut = (info.total.outputMb + ' MB')
+        }).catch(() => {
+                netsIn = NotDetect,
+                netsOut = NotDetect
+        })
+        await Promise.all([p1, p2, p3, p4])        
+        let _ramTotal = (ramTotal + ' MB')
+        let cek = await(await fetch("https://api.myip.com")).json().catch(_ => 'error')
+        
+        let ip = (cek == 'error' ? 'ɴᴏᴛ ᴅᴇᴛᴇᴄᴛ' : cek.ip)
+        let cr = (cek == 'error' ? 'ɴᴏᴛ ᴅᴇᴛᴇᴄᴛ' : cek.country)
+        let cc = (cek == 'error' ? 'ɴᴏᴛ ᴅᴇᴛᴇᴄᴛ' : cek.cc)
+        
+        let d = new Date(new Date + 3600000)
+    let locale = 'id'
+    let weeks = d.toLocaleDateString(locale, { weekday: 'long' })
+    let dates = d.toLocaleDateString(locale, {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric'
+    })
+        let times = d.toLocaleTimeString(locale, {
+      hour: 'numeric',
+      minute: 'numeric',
+      second: 'numeric'
+    })
+        
   let old = performance.now()
-  await m.reply(`*_${md} @${m.sender.split(`@`)[0]}..._*`)
+  await m.reply(`*(⁠≧⁠▽⁠≦⁠)*`)
   let neww = performance.now()
-  let session = fs.statSync(authFile)
   let speed = neww - old
-  let zyko = 'https://telegra.ph/file/0b523d1d86ca372a408d2.jpg'
-  let runtt = `*s ᴘ ᴇ ᴇ ᴅ*
-${Math.round(neww - old)} ms
-${speed} ms
+  await conn.reply(m.chat,`- *ᴘ ɪ ɴ ɢ* -
+${Math.round(neww - old)}ms
+${speed}ms
 
-*ʀ ᴜ ɴ ᴛ ɪ ᴍ ᴇ* 
+- *ʀ ᴜ ɴ ᴛ ɪ ᴍ ᴇ* -
 ${muptime}
 ${readMore}
-*ᴄ ʜ ᴀ ᴛ s*
+
+- *ᴄ ʜ ᴀ ᴛ s* -
 • *${groupsIn.length}* Group Chats
 • *${groupsIn.length}* Groups Joined
 • *${groupsIn.length - groupsIn.length}* Groups Left
 • *${chats.length - groupsIn.length}* Personal Chats
 • *${chats.length}* Total Chats
 
+- *s ᴇ ʀ ᴠ ᴇ ʀ* -
+*🛑 Rᴀᴍ:* ${ramUsed} / ${_ramTotal}(${/[0-9.+/]/g.test(ramUsed) &&  /[0-9.+/]/g.test(ramTotal) ? Math.round(100 * (ramUsed / ramTotal)) + '%' : NotDetect})
+*🔵 FʀᴇᴇRᴀᴍ:* ${format(freemem())}
 
-*s ᴇ ʀ ᴠ ᴇ ʀ*
-*🛑 ʀᴀᴍ:* ${format(totalmem() - freemem())} / ${format(totalmem())}
-*🔵 ғʀᴇᴇRAM:* ${format(freemem())}
-*📑 sᴇssɪᴏɴ sɪᴢᴇ :* ${format(session.size)}
-*💻 ᴘʟᴀᴛғᴏʀᴍ :* ${os.platform()}
-*🪴 sᴇʀᴠᴇʀ :* ${os.hostname()}
+*🔭 ᴘʟᴀᴛғᴏʀᴍ:* ${os.platform()}
+*🧿 sᴇʀᴠᴇʀ:* ${os.hostname()}
+*💻 ᴏs:* ${OS}
+*📍 ɪᴘ:* ${ip}
+*🌎 ᴄᴏᴜɴᴛʀʏ:* Indonesian
+*💬 ᴄᴏᴜɴᴛʀʏ ᴄᴏᴅᴇ:* Not Found
+*📡 ᴄᴘᴜ ᴍᴏᴅᴇʟ:* ${cpuModel}
+*🔮 ᴄᴘᴜ ᴄᴏʀᴇ:* ${cpuCore} Core
+*🎛️ ᴄᴘᴜ:* ${cpuPer}%
+*⏰ ᴛɪᴍᴇ sᴇʀᴠᴇʀ:* ${times}
+
 ${readMore}
-NodeJS Memory Usage*
+*${htjava} ɴᴏᴅᴇJS ᴍᴇᴍᴏʀʏ ᴜsᴀɢᴇ*
 ${'```' + Object.keys(used).map((key, _, arr) => `${key.padEnd(Math.max(...arr.map(v => v.length)), ' ')}: ${format(used[key])}`).join('\n') + '```'}
 
-${cpus[0] ? `_Total CPU Usage_
-${cpus[0].model.trim()} (${cpu.speed} MHZ)\n${Object.keys(cpu.times).map(type => `- *${(type + '*').padEnd(6)}: ${(100 * cpu.times[type] / cpu.total).toFixed(2)}%`).join('\n')}
-
-_CPU Core(s) Usage (${cpus.length} Core CPU)_
-${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Object.keys(cpu.times).map(type => `- *${(type + '*').padEnd(6)}: ${(100 * cpu.times[type] / cpu.total).toFixed(2)}%`).join('\n')}`).join('\n\n')}` : ''}` 
-let fliveLoc22 = {
-            key: {
-            participant : '0@s.whatsapp.net'},
-            message: { "liveLocationMessage": { "title": gcname,"h": bottime, 'jpegThumbnail': fs.readFileSync('./thumbnail.jpg')}}
-           }
-await conn.send2ButtonDoc(m.chat, runtt, botdate, 'Owner', '.owner', 'Menu', '.Menu', fliveLoc22, {
-			contextInfo: {
-				forwardingScore: fsizedoc,
-				externalAdReply: {
-                    body: bottime,
-    containsAutoReply: true,
-    mediaType: 1,
-    mediaUrl: syt,
-    renderLargerThumbnail: true,
-    showAdAttribution: false,
-    sourceId: 'HoloBot',
-    sourceType: 'PDF',
-    previewType: 'PDF',
-    sourceUrl: wame,
-    thumbnail: await(await fetch(zyko)).buffer(),
-    thumbnailUrl: syt,
-    title: 'HoloBot ID',
-				}
-			}
-})
-/*await conn.send2ButtonVid(m.chat, pp, cap, botdate, '𝐋𝐢𝐬𝐭𝐌𝐞𝐧𝐮', '.listmenu', '𝐃𝐚𝐬𝐛𝗼𝐚𝐫𝐝', '.db', m, adReply)*/
+`,m)
 }
-
-/*await conn.relayMessage(m.chat, { requestPaymentMessage: {
-  noteMessage: { extendedTextMessage: { text: runtt,
-  currencyCodeIso4217: 'USD',
-  requestFrom: '0@s.whatsapp.net',
-  expiryTimestamp: 8600,
-  amount: 10000,
-  background: thumb
-}}}}, {})
-
-}*/
 handler.help = ['ping', 'speed']
 handler.tags = ['info', 'tools']
 
