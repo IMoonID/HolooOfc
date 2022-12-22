@@ -8,13 +8,13 @@ let handler = async (m, { conn, command, text, usedPrefix }) => {
   await conn.sendHydrated(m.chat, `
 *${htki} PLAY ${htka}*
 
-${htjava} *Judul:* ${title}
-📤 *Published:* ${publishedTime}
+❓ Judul:* ${title}
+📐 *Published:* ${publishedTime}
 ⏰ *Duration:* ${durationH}
-👁️ *Views:* ${viewH}
+👁️ *Penonton:* ${viewH}
 
 🔗 *Url:* ${url}
-📔 *Description:* ${description}
+📔 *Deskripsi:* ${description}
   `.trim(), wm, thumbnail, url, 'Pergi Ke YouTube', null, null, [
     ['Via Audio', `${usedPrefix}yta ${url} yes`],
     ['Via Video', `${usedPrefix}ytv ${url} yes`],
@@ -27,6 +27,5 @@ handler.command = /^play2?$/i
 
 handler.exp = 0
 handler.limit = false
-handler.register = true
 
 export default handler
