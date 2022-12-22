@@ -14,8 +14,8 @@ const defaultMenu = {
 
 %readmore
 `.trimStart(),
-  header: '乂 *%category*',
-  body: '×    %cmd %isPremium %islimit',
+  header: '乂 %category',
+  body: '× %cmd %isPremium %islimit',
   footer: '\n',
   after: ``,
 }
@@ -58,115 +58,115 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname, args }) => {
   'thnks': 'Thanks To',
 }
   if (teks == 'game') tags = {
-    'game': '𐐪-〚 Game 〛-𐑂'
+    'game': '𝘎𝘢𝘮𝘦'
   }
   if (teks == 'anime') tags = {
-    'anime': '𐐪-〚 Animek 〛-𐑂'
+    'anime': '𝘈𝘯𝘪𝘮𝘦'
   }
   if (teks == 'nsfw') tags = {
-    'nsfw': '𐐪-〚 Nsfw 〛-𐑂'
+    'nsfw': '𝘕𝘴𝘧𝘸'
   }
   if (teks == 'rpg') tags = {
-    'rpg': '𐐪-〚 Rpg 〛-𐑂'
+    'rpg': '𝘙𝘱𝘨 𝘙𝘰𝘭𝘦𝘱𝘭𝘢𝘺'
   }
   if (teks == 'edukasi') tags = {
-    'edukasi': '𐐪-〚 Edukasi 〛-𐑂'
+    'edukasi': '𝘌𝘥𝘶𝘬𝘢𝘴𝘪'
   }
   if (teks == 'news') tags = {
-    'news': '𐐪-〚 News 〛-𐑂'
+    'news': '𝘕𝘦𝘸𝘴'
   }
   if (teks == 'random') tags = {
-    'random': '𐐪-〚 Randoms 〛-𐑂'
+    'random': '𝘙𝘢𝘯𝘥𝘰𝘮'
   }
   if (teks == 'xp') tags = {
-    'xp': '𐐪-〚 Exp & Limit 〛-𐑂'
+    'xp': '𝘌𝘹𝘱 & 𝘓𝘪𝘮𝘪𝘵'
   }
   if (teks == 'stiker') tags = {
-    'sticker': '𐐪-〚 Sticker 〛-𐑂'
+    'sticker': '𝘚𝘵𝘪𝘤𝘬𝘴𝘳'
   }
   if (teks == 'kerangajaib') tags = {
-    'kerang': '𐐪-〚 Kerang Ajaib 〛-𐑂'
+    'kerang': '𝘒𝘦𝘳𝘢𝘯𝘨 𝘢𝘢𝘪𝘣'
   }
   if (teks == 'quotes') tags = {
-    'quotes': '𐐪-〚 Quotes 〛-𐑂'
+    'quotes': '𝘘𝘶𝘰𝘵𝘦𝘴'
   }
   if (teks == 'admin') tags = {
     'admin': `Admin ${global.opts['restrict'] ? '' : '(Dinonaktifkan)'}`,
-    'group': '𐐪-〚 Group Admin 〛-𐑂'
+    'group': '𝘈𝘥𝘮𝘪𝘯'
   }
   if (teks == 'group') tags = {
-    'group': '𐐪-〚 Grub 〛-𐑂'
+    'group': '𝘎𝘳𝘶𝘣'
   }
   if (teks == 'premium') tags = {
-    'premium': '𐐪-〚 Premium 〛-𐑂'
+    'premium': '𝘗𝘳𝘦𝘮𝘪𝘶𝘮 𝘜𝘴𝘦𝘳'
   }
   if (teks == 'internet') tags = {
-    'internet': '𐐪-〚 Internet 〛-𐑂'
+    'internet': '𝘐𝘯𝘵𝘦𝘳𝘯𝘦𝘵'
   }
   if (teks == 'anonymous') tags = {
-    'anonymous': '𐐪-〚 Anon Chat 〛-𐑂'
+    'anonymous': '𝘈𝘯𝘰𝘯 𝘊𝘩𝘢𝘵'
   }
   if (teks == 'nulis') tags = {
-    'nulis': 'Nulis',
-    'maker': '𐐪-〚 Maker 〛-𐑂'
+    'nulis': '𝘕𝘶𝘭𝘪𝘴',
+    'maker': '𝘔𝘢𝘬𝘦𝘳'
   }
   if (teks == 'downloader') tags = {
-    'downloader': '𐐪-〚 Downloader 〛-𐑂'
+    'downloader': '𝘋𝘰𝘸𝘯𝘭𝘰𝘢𝘥𝘦𝘳'
   }
   if (teks == 'tools') tags = {
-    'tools': '𐐪-〚 Tools 〛-𐑂'
+    'tools': '𝘛𝘰𝘰𝘭𝘴'
   }
   if (teks == 'fun') tags = {
-    'fun': '𐐪-〚 Fun 〛-𐑂'
+    'fun': '𝘍𝘶𝘯'
   }
   if (teks == 'database') tags = {
-    'database': '𐐪-〚 Database 〛-𐑂'
+    'database': '𝘋𝘢𝘵𝘢𝘣𝘢𝘴𝘦'
   }
   if (teks == 'vote') tags = {
-    'vote': 'Voting',
-    'absen': '𐐪-〚 Absen 〛-𐑂'
+    'vote': '𝘝𝘰𝘵𝘪𝘯𝘨',
+    'absen': '𝘈𝘣𝘴𝘦𝘯'
   }
   if (teks == 'absen') tags = {
-    'absen': '𐐪-〚 Absen 〛-𐑂'
+    'absen': '𝘈𝘣𝘴𝘦𝘯'
   }
   if (teks == 'quran') tags = {
-    'quran': 'Al-Qur\'an',
-    'islamic': '𐐪-〚 Islamic 〛-𐑂'
+    'quran': '𝘈𝘭 𝘘𝘶𝘳𝘢𝘯',
+    'islamic': '𝘐𝘴𝘭𝘢𝘮𝘪𝘤'
   }
   if (teks == 'audio') tags = {
-    'audio': '𐐪-〚 Audio 〛-𐑂'
+    'audio': '𝘈𝘶𝘥𝘪𝘰'
   }
   if (teks == 'jadibot') tags = {
-    'jadibot': '𐐪-〚 JadiBot 〛-𐑂'
+    'jadibot': '𝘑𝘢𝘥𝘪𝘣𝘰𝘵'
   }
   if (teks == 'info') tags = {
-    'info': '𐐪-〚 Info 〛-𐑂'
+    'info': '𝘐𝘯𝘧𝘰'
   }
   if (teks == 'owner') tags = {
-    'owner': 'Owner',
-    'host': 'Host',
-    'advanced': '𐐪-〚 Advanced 〛-𐑂'
+    'owner': '𝘖𝘸𝘯𝘦𝘳',
+    'host': '𝘏𝘰𝘴𝘵',
+    'advanced': '𝘈𝘥𝘷𝘢𝘯𝘤𝘦𝘥'
   }
  if (teks == 'nsfw') tags = {
-    'nsfw': '𐐪-〚 Nsfw 〛-𐑂'
+    'nsfw': '𝘕𝘴𝘧𝘸'
   }
  if (teks == 'edukasi') tags = {
-    'edukasi': '𐐪-〚 Edukasi 〛-𐑂'
+    'edukasi': '𝘌𝘥𝘶𝘬𝘢𝘴𝘪'
   }
   if (teks == 'quotes') tags = {
-    'quotes': '𐐪-〚 Quotes 〛-𐑂'
+    'quotes': '𝘘𝘶𝘰𝘵𝘦𝘴'
  }
   if (teks == 'maker') tags = {
-    'maker': '𐐪-〚 Maker 〛-𐑂'
+    'maker': '𝘔𝘢𝘬𝘦𝘳'
  }
   if (teks == 'store') tags = {
-    'store': '𐐪-〚 Store Menu 〛-𐑂'
+    'store': '𝘚𝘵𝘰𝘳𝘦'
   }
   if (teks == 'virus') tags = {
-    'virus': '𐐪-〚 Virtex 〛-𐑂'
+    'virus': '𝘗𝘪𝘳𝘵𝘦𝘹 :𝘷'
  }
   if (teks == 'thnks') tags = {
-    'thnks': '𐐪-〚 Thanks To 〛-𐑂'
+    'thnks': '𝘛𝘲𝘵𝘰'
   }
   try {
   	// DEFAULT MENU
@@ -251,8 +251,6 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname, args }) => {
 	title: `${htki} ▮𝗜𝗻𝗳𝗼 」 ${htka}`,
 	rows: [
 	    {title: `🎁 ∫ » Referal «`, rowId: ".ref", description: "✧ Bagikan code undangan biar dapat hadiah...."},
-	    {title: `📮 ∫ » Rules «`, rowId: ".rules", description: `✧ Peraturan menggunakan ${namebot}`},
-	  {title: `✨ ∫ » Rating «`, rowId: ".rate", description: '✧ Rating Bot'},
       ]
     },
 ]
@@ -422,7 +420,7 @@ const listMessage = {
   "jpegThumbnail": fs.readFileSync('./thumbnail.jpg'),
     },
   "title": `${ucapan()}`,
-  "description": '𝗧 𝗜 𝗠 𝗘 : ' + wktuwib,
+  "description": '𝖶𝖺𝗄𝗍𝗎 : ' + wktuwib,
   "currencyCode": "US",
   "priceAmount1000": "100",
   "retailerId": wm,
@@ -576,7 +574,7 @@ function _0x1766() {
     const message = {
             document: { url: thumbdoc },
             jpegThumbnail: await (await fetch(thumbdoc)).buffer(),
-            fileName: '𝗧 𝗜 𝗠 𝗘 : ' + wktuwib,
+            fileName: '𝖶𝖺𝗄𝗍𝗎 : ' + wktuwib,
             mimetype: td,
             fileLength: fsizedoc,
             pageCount: fpagedoc,
