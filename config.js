@@ -134,6 +134,7 @@ global.pacarowner = 'Amel San'
 
 /*============== TEXT ==============*/
 global.wait = '```𝙇𝙤𝙖𝙙𝙞𝙣𝙜...```'
+global.md = 'Tunggu sebentar kak'
 global.eror = '```𝙉𝙤𝙩 𝙁𝙤𝙪𝙣𝙙 𝟰𝟬𝟰 𝙀𝙧𝙤𝙧```'
 
 /*=========== TYPE DOCUMENT ===========*/
