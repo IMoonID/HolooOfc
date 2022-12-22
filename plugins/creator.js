@@ -6,16 +6,19 @@ let handler  = async (m, { conn, command, args, usedPrefix, DevMode }) => {
 
 //------- NOMOR
   let nowner = `https://wa.me/${nomorown.split`@`[0]}`
-  let teksnomor = `${htki} *OWNER* ${htka}
-✦ https://wa.me/${nomorown.split`@`[0]} ✦
+  let teksnomor = `Creator/Owner Bot
+https://wa.me/${nomorown.split`@`[0]} ✦
 ------- ${nameown} -------
 
-📮 *Note:*
-• Owner tidak menerima save contact
-• Owner berhak blockir tanpa alasan
-• Berbicaralah yang sopan & tidak spam
-• Owner Hanya merespon yang berkaitan dengan BOT
-• No Telp`
+*Catatan
+• Jangan spam owner
+• Jangan telepon owner
+
+Note:
+Owner -1 Cewek
+
+Thanks ~
+`
 
 //------------ BIO
 let ppown = await conn.profilePictureUrl(nomorown + '@s.whatsapp.net', 'image').catch(_ => hwaifu[1]) 
@@ -25,7 +28,7 @@ const sections = [
    {
 	title: `${htjava} Creator –––––––––·•`,
 	rows: [
-	    {title: "Nomor Owner", rowId: ".owner nomor"},
+	    {title: "Nomor Owner ❗", rowId: ".owner nomor"},
 	]
   },
 ]
@@ -76,6 +79,6 @@ const listMessage = {
 
 handler.help = ['owner', 'creaor']
 handler.tags = ['main', 'info']
-handler.command = /^(owner|creator)/i
+handler.command = /^(owner|creator|pembuatbot|ownerbot)/i
 
 export default handler
