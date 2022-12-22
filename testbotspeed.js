@@ -124,7 +124,7 @@ await conn.send2ButtonDoc(m.chat, runtt, botdate, 'Owner', '.owner', 'Menu', '.M
 }}}}, {})
 
 }*/
-handler.help = ['ping', 'speed']
+handler.help = ['testbotspeed']
 handler.tags = ['info', 'tools']
 
 handler.command = /^(testbotspeed)$/i
