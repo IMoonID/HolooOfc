@@ -11,7 +11,7 @@ let handler = async (m, { conn, args, command }) => {
 let totalf = Object.values(global.plugins).filter(
     (v) => v.help && v.tags
   ).length;
- await conn.sendButton(m.chat, `⻝ "ʜᴏʟᴏ ʙᴏᴛ"\n\n\nʀ  ᴜ  ʟ  ᴇ  s   ༆\n\n◉ ᴊᴀɴɢᴀɴ sᴘᴀᴍ ʙᴏᴛ\n◉ ᴊᴀɴɢᴀɴ ᴋɪʀɪᴍ ʙᴜɢ/ᴠɪʀᴛᴇx/ᴠɪʀᴋᴏɴ ᴅʟʟ\n\n◉ ウイルスをボットに送信しない\n◉ ボットにスパムを送信しないでください\n\n\n`,wm + '\n\n' + botdate, thumbdoc, [['List Menu','.holoo'],['Semua Menu','.? All']], m, {
+ await conn.sendButton(m.chat, `ʜᴀɪ,ᴀᴋᴜ ᴀᴅᴀʟᴀʜ ʜᴏʟᴏ ʙᴏᴛ\nꜱɪʟᴀʜᴋᴀɴ ᴘɪʟɪʜ ᴍᴇɴᴜ ʙᴏᴛ ᴅɪ ʙᴀᴡᴀʜ ᴜɴᴛᴜᴋ ᴍᴇᴍᴜʟᴀɪ ʙᴏᴛ`,wm + '\n\n' + botdate, thumbdoc, [['𝘓𝘪𝘴𝘵 𝘔𝘦𝘯𝘶','.holoo'],['𝘚𝘦𝘮𝘶𝘢 𝘔𝘦𝘯𝘶','.? All']], m, {
 contextInfo: { externalAdReply :{
                         mediaUrl: '',
                         mediaType: 2,
