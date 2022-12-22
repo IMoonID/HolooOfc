@@ -412,10 +412,10 @@ let imgr = flaaa.getRandom()
     let buttons = ''
     text = (command.toLowerCase() == 'buy' ?
 (`
-*${htki} BUY ${htka}*
+*${htki} Buy ${htka}*
 `.trim()) : 
 (`
-*${htki} SELL ${htka}*
+*${htki} Sell ${htka}*
 `.trim())
 )
     footer = (command.toLowerCase() == 'buy' ?
@@ -426,20 +426,20 @@ ${Object.keys(listItems).map((v) => {
         return `⮕ 1 ${global.rpg.emoticon(v)}${v} ﹫ ${listItems[v][paymentMethod]} ${global.rpg.emoticon(paymentMethod)}${paymentMethod}`.trim()
     }).join('\n')}
 –––––––––––––––––––––––––
-💁🏻‍♂ ᴛɪᴩ :
+❓ ᴛɪᴩ :
 ⮕ ᴛᴏ ʙᴜʏ ɪᴛᴇᴍs:
 ${usedPrefix}${command} [item] [quantity]
 ★ ᴇxᴀᴍᴩʟᴇ:
 ${usedPrefix}${command} potion 10
 `.trim()) : 
 (`
-🔖 ɪᴛᴇᴍs ʟɪsᴛ :
+🪴 ɪᴛᴇᴍs ʟɪsᴛ :
 ${Object.keys(listItems).map((v) => {
         let paymentMethod = Object.keys(listItems[v]).find(v => v in user)
         return `⮕ 1 ${global.rpg.emoticon(v)}${v} ﹫ ${listItems[v][paymentMethod]} ${global.rpg.emoticon(paymentMethod)}${paymentMethod}`.trim()
     }).join('\n')}
 –––––––––––––––––––––––––
-💁🏻‍♂ ᴛɪᴩ :
+❓ ᴛɪᴩ :
 ⮕ ᴛᴏ sᴇʟʟ ɪᴛᴇᴍs:
 ${usedPrefix}${command} [item] [quantity]
 ★ ᴇxᴀᴍᴩʟᴇ:
@@ -487,7 +487,7 @@ ${usedPrefix}transfer ${paymentMethod} ${(listItems[item][paymentMethod] * total
 `*${htki} BOUGHT ${htka}*`,
 `ʏᴏᴜ *ʙᴏᴜɢʜᴛ ${total} ${global.rpg.emoticon(item)}${item}*.
 `.trim(), imgr + 'bought', [
-[`ɪɴᴠᴇɴᴛᴏʀʏ`, `${usedPrefix}inventory`]
+[`My Inventory`, `${usedPrefix}inventory`]
 ], m)
     } else {
         if (user[item] < total) return m.reply(`You don't have enough *${global.rpg.emoticon(item)}${item}* to sell, you only have ${user[item]} items`)
@@ -497,7 +497,7 @@ ${usedPrefix}transfer ${paymentMethod} ${(listItems[item][paymentMethod] * total
 `*${htki} SOLD ${htka}*`,
 `ʏᴏᴜ *sᴏʟᴅ ${total} ${global.rpg.emoticon(item)}${item}*.
 `.trim(), imgr + 'sold', [
-[`ɪɴᴠᴇɴᴛᴏʀʏ`, `${usedPrefix}inventory`]
+[`My Inventory`, `${usedPrefix}inventory`]
 ], m)
     }
 }
