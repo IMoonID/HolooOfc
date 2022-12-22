@@ -10,6 +10,6 @@ handler.help = ['setbye <teks>']
 handler.tags = ['group']
 handler.command = /^setbye$/i
 handler.group = true
-handler.admin = true
+handler.owner = true
 
 export default handler
