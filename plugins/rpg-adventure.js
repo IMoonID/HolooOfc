@@ -6,7 +6,7 @@ let handler = async (m, { usedPrefix }) => {
 '*–––––『 LOW HEALTH 』–––––*',
 `Datahmu kurang dari 80﹗
 Heal terlebih dahulu sebelum adventure.`.trim(), './media/lowhealth.jpg', [
-[`ʜᴇᴀʟ ❤`, `${usedPrefix}heal`]
+[`Heal`, `${usedPrefix}heal`]
 ], m, {asLocation: true})
     if (new Date - user.lastadventure <= cooldown) return conn.sendButton(m.chat, 
 '*–––––『 COOLDOWN 』–––––*',
