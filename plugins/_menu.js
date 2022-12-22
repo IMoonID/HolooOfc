@@ -27,7 +27,7 @@ contextInfo: { externalAdReply :{
 
 handler.help = ['menu']
 handler.tags = ['group']
-handler.command = /^(menu|help|co|test|holooo)$/i
+handler.command = /^(menu|help|co|test|holooo|halobot|haiholo)$/i
 handler.register = false
 
 export default handler
