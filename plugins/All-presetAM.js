@@ -17,7 +17,7 @@ let handler  = async (m, { conn, command, args, usedPrefix, DevMode }) => {
 • Owner Hanya merespon yang berkaitan dengan BOT
 • No Telp`
 
-  let teks = `${htjava} _Pilih Preset nya dibawah kak_ ! o(〃＾▽＾〃)o\n${htjava} *KHUSUS PRESET ALIGHT MOTION*`
+  let teks = `_Pilih Preset nya dibawah kak_`
 const sections = [
    {
 	title: `${htjava} PRESET MENU –––––––––·•`,
@@ -34,9 +34,10 @@ const sections = [
 	{title: "▢ Preset 10", rowId: ".p10"},
 ]
     },{
-	title: `❓ Back To Menu`,
+	title: `Lainnya`,
 	rows: [
 	{title: "Back To Menu", rowId: ".menu"},
+        {title: "Owner Bot", rowId: ".owner"},
 	]
   },
 ]
@@ -45,7 +46,7 @@ const listMessage = {
   text: teks,
   footer: null,
   title: `${htki} *Preset Menu* ${htka}`,
-  buttonText: "Klik disini",
+  buttonText: "Klik",
   sections
 }
 
@@ -78,7 +79,7 @@ const listMessage = {
 
 handler.help = ['presetmenu']
 handler.tags = ['fun']
-handler.command = /^(presetmenu)/i
+handler.command = /^(presetmenu|presetam)/i
 
 
 export default handler
