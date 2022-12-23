@@ -18,7 +18,7 @@ contextInfo: { externalAdReply :{
                         description: '(⁠≧⁠▽⁠≦⁠)',
                         title: `スパムしないでください`,
                         body: `やあ`,          previewType: 0,
-                        thumbnail: await (await fetch(`https://telegra.ph/file/4367073da0bba8a8d901b.jpg`)).buffer(),
+                        thumbnail: await (await fetch(`https://telegra.ph/file/d475057d25d3a792f0614.jpg`)).buffer(),
                         sourceUrl: 'https://youtube.com/@MoonaHoshinova'
                       }}
 })
