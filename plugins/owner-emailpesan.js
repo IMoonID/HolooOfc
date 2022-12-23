@@ -10,25 +10,18 @@ let [number, pesan] = text.split `|`
 
     let korban = `${number}`
     var nomor = m.sender
-    let spam1 = `*「 📧 EMAIL 」*\n\n📫Dari : wa.me/${korban}\n💬Pesan : ${pesan}\n\n *${global.wm}*`
+    let spam1 = `*「 EMAIL 」*\n\n📫Dari : Owner Holo Bot\n\n💬Pesan : ${pesan}\n\n *${global.wm}*`
 
     conn.reply(korban + '@s.whatsapp.net', spam1, m)
 
-    let logs = `[!] Berhasil mengirim pesan wa ke nomor ${korban}`
+    let logs = `Berhasil mengirim pesan wa ke nomor ${korban}`
     conn.reply(m.chat, logs, m)
 }
 handler.help = ['email']
 handler.tags = ['owner']
 
 handler.command = /^(email)$/i
-handler.rowner = false
-handler.limit = true
-handler.premium = false
-handler.group = false
-handler.private = false
-
-handler.admin = false
-handler.botAdmin = false
+handler.owner = true
 
 handler.fail = null
 handler.limit = false
