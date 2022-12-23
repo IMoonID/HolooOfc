@@ -113,7 +113,7 @@ let handler = async (m, { conn, isRowner}) => {
     })
         
   let old = performance.now()
-  await m.reply(`*(⁠≧⁠▽⁠≦⁠)*`)
+  await m.reply(`*Bentar Bang*`)
   let neww = performance.now()
   let speed = neww - old
   await conn.reply(m.chat,`- *ᴘ ɪ ɴ ɢ* -
