@@ -8,7 +8,7 @@ https://alight.link/UNgUAHjxoZdxnGT8A
 }
 handler.help = ['Preset AM']
 handler.tags = ['tools']
-handler.command = /^(p0)$/i
+handler.command = /^(p10)$/i
 handler.limit = true
 
 export default handler
