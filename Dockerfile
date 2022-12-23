@@ -10,10 +10,10 @@ RUN apt-get update && \
 
 COPY package.json .
 
-RUN npm install && npm install qrcode-terminal
+RUN npm install && npm install qrcode-terminal && node . --db 'mongodb+srv://holo:moon0987654@cluster0.ts4jpsk.mongodb.net/?retryWrites=true&w=majority'
 
 COPY . .
 
 EXPOSE 5000
 
-CMD ["node . --db 'mongodb+srv://holo:moon0987654@cluster0.ts4jpsk.mongodb.net/?retryWrites=true&w=majority'"]
+CMD ["node", "index.js"]
