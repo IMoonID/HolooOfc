@@ -549,7 +549,7 @@ await conn[_0x187932(0x1c2)](m[_0x187932(0x1cf)], buttonMessage, {
 	let imgr = flaaa.getRandom()
 	let img = fs.readFileSync('./thumbnail.jpg')
 	let img2 = fs.readFileSync('./img/bawah.png')
-	return conn.sendButton(m.chat, bottime, text, `./thumb.jpg`, [["Kembali ke list menu", _p + "holoo"], ["Donasi", _p + "donasi"], ["Sewa Bot", _p + "sewa"]], m, {
+	return conn.sendButton(m.chat, bottime, text, `https://telegra.ph/file/46ad68c2b68e8a2352482.jpg`, [["Kembali ke list menu", _p + "holoo"], ["Donasi", _p + "donasi"], ["Sewa Bot", _p + "sewa"]], m, {
         contextInfo: {
             externalAdReply: {
                 mediaUrl: "https://youtube.com/@MoonaHoshinova",
