@@ -115,11 +115,11 @@ global.ultahowner = '11 juni 2023'
 
 
 /*============== LOGO ==============*/
-global.thumb = 'https://telegra.ph/file/b14c1cdd4cee0ff825bc8.jpg' //Main Thumbnail
-global.imagebot = 'https://telegra.ph/file/4367073da0bba8a8d901b.jpg'
+global.thumb = 'https://telegra.ph/file/79db0d77e3ea56bb2c4ae.jpg' //Main Thumbnail
+global.imagebot = 'https://telegra.ph/file/511d697955a7cdc4e4314.jpg'
 global.giflogo = 'https://ibb.co/3sJ0ybv'
 global.giflogo2 = 'https://telegra.ph/file/a5eb5169ab1330a537e0b.jpg'
-global.thumbs = ['https://telegra.ph/file/7db49c83fd106a60741cd.jpg']
+global.thumbs = ['https://telegra.ph/file/511d697955a7cdc4e4314.jpg']
 global.fla = 'https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=sketch-name&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&fillTextType=1&fillTextPattern=Warning!&text='
 global.thumbBanned = 'https://telegra.ph/file/a5eb5169ab1330a537e0b.jpg'
 global.thumbWarn = 'https://telegra.ph/file/a5eb5169ab1330a537e0b.jpg'
@@ -130,7 +130,7 @@ global.nameowner = 'Sho'
 global.umurowner = '∞'
 global.asalowner = 'Jawa Barat, Saturnus'
 global.nomorowner = 'wa.me/0'
-global.pacarowner = 'Amel San'
+global.pacarowner = 'Amell Mekdi'
 
 /*============== TEXT ==============*/
 global.wait = '```𝙇𝙤𝙖𝙙𝙞𝙣𝙜...```'
