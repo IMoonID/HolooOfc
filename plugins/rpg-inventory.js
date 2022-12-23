@@ -146,7 +146,7 @@ ${cooldowns}` : ''}
 *✧ dungeon: ${user.lastdungeon == 0 ? '✅': '❌'}*
 *✧ mining: ${user.lastmining == 0 ? '✅': '❌'}*
 `.trim()
-conn.sendButton(m.chat, '*–––––『 Inventory 』–––––*', caption, 'https://telegra.ph/file/398e579a594375aef2e9a.jpg', [
+conn.sendButton(m.chat, '*–––––『 Inventory 』–––––*', caption, 'https://telegra.ph/file/f5991305c30d2276cdea7.jpg', [
 [`Heal`, `.heal`],
 [`Berpetualang`, `.adventure`]
 ], m, {asImage: false})
