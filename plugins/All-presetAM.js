@@ -17,21 +17,21 @@ let handler  = async (m, { conn, command, args, usedPrefix, DevMode }) => {
 • Owner Hanya merespon yang berkaitan dengan BOT
 • No Telp`
 
-  let teks = `_Pilih Preset nya dibawah kak_`
+  let teks = `_Pilih Preset nya dibawah_`
 const sections = [
    {
 	title: `${htjava} PRESET MENU –––––––––·•`,
 	rows: [
-	{title: "▢ Preset 1", rowId: ".p1"},
-    {title: "▢ Preset 2", rowId: ".p2"},
-	{title: "▢ Preset 3", rowId: ".p3"},
-	{title: "▢ Preset 4", rowId: ".p4"},
-	{title: "▢ Preset 5", rowId: ".p5"},
-	{title: "▢ Preset 6", rowId: ".p6"},
-	{title: "▢ Preset 7", rowId: ".p7"},
-	{title: "▢ Preset 8", rowId: ".p8"},
-	{title: "▢ Preset 9", rowId: ".p9"},
-	{title: "▢ Preset 10", rowId: ".p10"},
+	{title: "× Preset 1", rowId: ".p1"},
+    {title: "× Preset 2", rowId: ".p2"},
+	{title: "× Preset 3", rowId: ".p3"},
+	{title: "× Preset 4", rowId: ".p4"},
+	{title: "× Preset 5", rowId: ".p5"},
+	{title: "× Preset 6", rowId: ".p6"},
+	{title: "× Preset 7", rowId: ".p7"},
+	{title: "× Preset 8", rowId: ".p8"},
+	{title: "× Preset 9", rowId: ".p9"},
+	{title: "× Preset 10", rowId: ".p10"},
 ]
     },{
 	title: `Lainnya`,
@@ -45,8 +45,8 @@ const sections = [
 const listMessage = {
   text: teks,
   footer: null,
-  title: `${htki} *Preset Menu* ${htka}`,
-  buttonText: "Klik",
+  title: `Holo Bot Preset Menu`,
+  buttonText: "Klik 🔖",
   sections
 }
 
