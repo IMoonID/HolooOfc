@@ -10,7 +10,7 @@ let handler = async (m, {usedPrefix}) => {
 '*–––––『 COOLDOWN 』–––––*',
 `Kamu sudah claim hari ini*, Tunggu coldown sesai
 
-🕰️ ${((user.lastclaim + cooldown) - new Date()).toTimeString()}`.trim(), 'https://telegra.ph/file/f57b63009fbe9fa333747.jpg', [
+🕰️ ${((user.lastclaim + cooldown) - new Date()).toTimeString()}`.trim(), 'https://telegra.ph/file/ddcd46b6985df7e5fa8fb.jpg', [
 [`Inventory`, `${usedPrefix}inventory`]
 ], m, {asLocation: false})
   let text = ''
@@ -22,7 +22,7 @@ let handler = async (m, {usedPrefix}) => {
   conn.sendButton(m.chat,
 `*––––『 Daily』––––*`,
 `🪴 ᴅᴀɪʟʏ ʀᴇᴡᴀʀᴅ ʀᴇᴄᴇɪᴠᴇᴅ :
-${text}`.trim(), 'https://telegra.ph/file/ddcd46b6985df7e5fa8fb.jpg', [
+${text}`.trim(), 'https://telegra.ph/file/e95dfa66c892d44362cc2.jpg', [
 [`ɪɴᴠᴇɴᴛᴏʀʏ 🎒`, `${usedPrefix}inventory`],
 [`ᴍᴏɴᴛʜʟʏ 🌿`, `${usedPrefix}monthly`]
 ], m, {asLocation: false})
