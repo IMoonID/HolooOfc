@@ -45,14 +45,14 @@ global.psaweria = '-'
 
 /*============== NOMOR ==============*/
 global.nomorbot = '0'
-global.nomorown = '6285607831412'
+global.nomorown = '6285731251154'
 global.namebot = 'HoloBot'
 global.nameown = 'Sho'
 
 
 /*============== STAFF ==============*/
 global.owner = [
-  ['6285607831412', 'Sho', 'true']
+  ['6285731251154', 'Sho', 'true']
   // [number, dia creator/owner?, dia developer?]
 ] // Put your number here
 global.mods = [] // Want some help?
