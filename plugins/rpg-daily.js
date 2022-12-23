@@ -22,9 +22,9 @@ let handler = async (m, {usedPrefix}) => {
   conn.sendButton(m.chat,
 `*––––『 Daily』––––*`,
 `🪴 ᴅᴀɪʟʏ ʀᴇᴡᴀʀᴅ ʀᴇᴄᴇɪᴠᴇᴅ :
-${text}`.trim(), 'https://telegra.ph/file/0cb0a5a3028c53fda523f.jpg', [
-[`ɪɴᴠᴇɴᴛᴏʀʏ`, `${usedPrefix}inventory`],
-[`ᴍᴏɴᴛʜʟʏ`, `${usedPrefix}monthly`]
+${text}`.trim(), 'https://telegra.ph/file/ddcd46b6985df7e5fa8fb.jpg', [
+[`ɪɴᴠᴇɴᴛᴏʀʏ 🎒`, `${usedPrefix}inventory`],
+[`ᴍᴏɴᴛʜʟʏ 🌿`, `${usedPrefix}monthly`]
 ], m, {asLocation: false})
   user.lastclaim = new Date * 1
 }
