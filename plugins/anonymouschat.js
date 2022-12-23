@@ -20,6 +20,6 @@ Partner anon chat
 handler.help = ['anonchat']
 handler.tags = ['anonymous']
 handler.command = /^(anonchat|anonymouschat)$/i
-handler.limit = true
+handler.private = true
 
 export default handler
