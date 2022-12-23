@@ -13,7 +13,7 @@ let totalf = Object.values(global.plugins).filter(
   ).length;
  await conn.sendButton(m.chat, `ʜᴀɪ,ᴀᴋᴜ ᴀᴅᴀʟᴀʜ ʜᴏʟᴏ ʙᴏᴛ\nꜱɪʟᴀʜᴋᴀɴ ᴘɪʟɪʜ ᴍᴇɴᴜ ʙᴏᴛ ᴅɪ ʙᴀᴡᴀʜ ᴜɴᴛᴜᴋ ᴍᴇᴍᴜʟᴀɪ ʙᴏᴛ`,wm + '\n\n' + botdate, thumbdoc, [['𝘓𝘪𝘴𝘵 𝘔𝘦𝘯𝘶','.holoo'],['𝘚𝘦𝘮𝘶𝘢 𝘔𝘦𝘯𝘶','.? All']], m, {
 contextInfo: { externalAdReply :{
-                        mediaUrl: 'https://telegra.ph/file/835e3a6084d038ac4e027.jpg',
+                        mediaUrl: '',
                         mediaType: 2,
                         description: '(⁠≧⁠▽⁠≦⁠)',
                         title: `スパムしないでください`,
