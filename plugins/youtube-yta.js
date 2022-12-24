@@ -26,26 +26,28 @@ let handler = async (m, { conn, args, isPrems, isOwner }) => {
   }
   if ((!(source instanceof ArrayBuffer) || !link || !res.ok) && !isLimit) throw 'Error: ' + (lastError || 'Can\'t download audio')
   if (!isY && !isLimit) await conn.sendFile(m.chat, thumbnail, 'thumbnail.jpg', `
-*${htki} YOUTUBE ${htka}*
+ 「 YOUTUBE 」
 
-*${htjava} Title:* ${title}
-*${htjava} Type:* mp3
-*${htjava} Filesize:* ${audio.fileSizeH}
+乂 Title:* ${title}
+乂 Type:* Audio
 
-*L O A D I N G. . .*
+乂 Filesize:* ${audio.fileSizeH}
+
+*Sedang Mengirim Audio*
 `.trim(), m)
   if (!isLimit) await conn.sendFile(m.chat, source, title + '.mp3', `
-*${htki} YOUTUBE ${htka}*
+ 「 YOUTUBE 」
 
-*${htjava} Title:* ${title}
-*${htjava} Type:* mp3
-*${htjava} Filesize:* ${audio.fileSizeH}
+乂 Title:* ${title}
+乂 Type:* Audio
 
-*L O A D I N G. . .*
+乂 Filesize:* ${audio.fileSizeH}
+
+*Sedang Mengirim Audio*
 `.trim(), m, null, {
     asDocument: chat.useDocument, mimetype: 'audio/mp4', ptt: false, contextInfo: {
         externalAdReply: { showAdAttribution: true,
-            title: '▶︎ ━━━━━━━•─────────────── ', 
+            title: '▶︎ ━━━━━━━•──────── ', 
             body: '🎵',
             description: '🎶',
             mediaType: 2,
