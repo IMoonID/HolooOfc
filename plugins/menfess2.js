@@ -40,11 +40,11 @@ Contoh: .menfess 628xxxxxxxxxx|ihacoy`
 
     conn.reply(m.chat, logs, m)
 }
-handler.help = ['menfess2 nomor|pesan']
+handler.help = ['menfess nomor|pesan']
 handler.tags = ['menbalas']
 
-handler.command = /^(menfess2|confess2|menfes2|confes2)$/i
-
+handler.command = /^(menfess|confess|menfes|confes)$/i
 handler.limit = true
 handler.private = true
+
 export default handler
