@@ -72,15 +72,11 @@ const listMessage = {
   let sn = createHash('md5').update(m.sender).digest('hex')
   let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : m.fromMe ? conn.user.jid : m.sender
   let cap = `
-▬▭▬▭▬▭▬▭▬▭▬
-Nama:
-${name}
-▬▭▬▭▬▭▬▭▬▭▬
+乂 Daftar Berhasil
 
-▬▭▬▭▬▭▬▭▬▭▬
-Sn Kamu:
-${sn}
-▬▭▬▭▬▭▬▭▬▭▬
+Untuk cek sn kamu ketik #sn
+
+Terimakasih telah mendaftar di bot
 `
   let buttonMessage= {
 'document':{'url':sgc},
@@ -97,7 +93,7 @@ ${sn}
 'previewType':'pdf',
 'title':global.titlebot,
 'body':global.titlebot,
-'thumbnail':await(await fetch('https://telegra.ph/file/4a7e5f18efaadec18a7a0.jpg')).buffer(),
+'thumbnail':await(await fetch('https://telegra.ph/file/817cbd009fe9c2401be51.jpg')).buffer(),
 'sourceUrl':sgc}},
 'caption':cap,
 'footer':botdate,
