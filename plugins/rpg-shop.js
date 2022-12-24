@@ -1,7 +1,7 @@
 const items = {
     buy: {
         limit: {
-            exp: 1000000
+            exp: 10000
         },
         potion: {
             money: 2500
@@ -470,23 +470,21 @@ ${usedPrefix}${command} potion 10
 `ʏᴏᴜ ɴᴇᴇᴅ ᴇxᴛʀᴀ *${(listItems[item][paymentMethod] * total) - user[paymentMethod]}* ${global.rpg.emoticon(paymentMethod)}${paymentMethod} ᴛᴏ ʙᴜʏ *${total}* ${global.rpg.emoticon(item)}${item}.
 ʏᴏᴜ'ᴠᴇ *${user[paymentMethod]}* ${global.rpg.emoticon(paymentMethod)}${paymentMethod} ɪɴ ʙᴀɢ.
 –––––––––––––––––––––––––
-💁🏻‍♂ ᴛɪᴩ :
+ᴛɪᴩ :
 ᴏᴩᴇɴ ᴄʀᴀᴛᴇs & ᴄᴏʟʟᴇᴄᴛ ʀᴇᴡᴀʀᴅs.
 ⮕ ᴛᴏ ᴏᴩᴇɴ ᴄʀᴀᴛᴇs:
 .open crate
 ⮕ ᴛᴏ ᴄᴏʟʟᴇᴄᴛ ʀᴇᴡᴀʀᴅs:
 .adventure | .daily | .monthly
 `.trim(), imgr + 'lowcredit', [
-[`ᴀsᴋ ᴛᴏ ᴀʟʟ`, `${usedPrefix}tagall sᴏᴍᴇʙᴏᴅʏ ᴩʟᴇᴀsᴇ sᴇɴᴅ *${(listItems[item][paymentMethod] * total) - user[paymentMethod]}* ${global.rpg.emoticon(paymentMethod)}${paymentMethod} ᴛᴏ ᴍᴇ.
-⮕ ᴛᴏ ᴛʀᴀɴsғᴇʀ ${paymentMethod}:
-${usedPrefix}transfer ${paymentMethod} ${(listItems[item][paymentMethod] * total) - user[paymentMethod]} @${conn.getName(m.sender)}`]
+[`Inventory`, `${usedPrefix}inv`]
 ], m)
         user[paymentMethod] -= listItems[item][paymentMethod] * total
         user[item] += total
         return conn.sendButton(m.chat,
 `*${htki} BOUGHT ${htka}*`,
 `ʏᴏᴜ *ʙᴏᴜɢʜᴛ ${total} ${global.rpg.emoticon(item)}${item}*.
-`.trim(), imgr + 'bought', [
+`.trim(), imgr + 'Membeli', [
 [`My Inventory`, `${usedPrefix}inventory`]
 ], m)
     } else {
