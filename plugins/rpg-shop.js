@@ -201,19 +201,19 @@ const items = {
     },
     sell: {
         limit: {
-            exp: 5000
+            exp: 100
         },
         potion: {
-            money: 1250
+            money: 50
         },
         aqua: {
-           money: 500
+           money: 100
         },
         trash: {
-            money: 40
+            money: 20
         },
         wood: {
-            money: 700
+            money: 100
         },
         rock: {
             money: 850
@@ -231,7 +231,7 @@ const items = {
             money: 50000
         },
         gold: {
-            money: 50000
+            money: 5000
         },
         coal: {
             money: 1500
@@ -255,37 +255,37 @@ const items = {
             money: 40000
         },
         naga: {
-            money: 120000
+            money: 1200
         },
         pet: {
-            money: 120000
+            money: 1200
         },
         anggur: {
-            money: 9000
+            money: 900
         },
         apel: {
-            money: 9000
+            money: 900
         },
         batu: {
-            money: 9000
+            money: 900
         },
         berlian: {
-            money: 9000
+            money: 900
         },
         bibitanggur: {
-            money: 9000
+            money: 900
         },
         bibitapel: {
-            money: 9000
+            money: 900
         },
         bibitjeruk: {
-            money: 9000
+            money: 900
         },
         bibitmangga: {
-            money: 9000
+            money: 900
         },
         bibitpisang: {
-            money: 9000
+            money: 900
         },
         botol: {
             money: 100
