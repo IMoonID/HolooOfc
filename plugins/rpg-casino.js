@@ -5,7 +5,7 @@ let handler = async (m, { conn, args, usedPrefix, DevMode }) => {
     else conn.casino[m.chat] = true
     try {
         let randomaku = `${Math.floor(Math.random() * 101)}`.trim()
-        let randomkamu = `${Math.floor(Math.random() * 81)}`.trim() //hehe Biar Susah Menang :v
+        let randomkamu = `${Math.floor(Math.random() * 900)}`.trim() //hehe Biar Susah Menang :v
         let Aku = (randomaku * 1)
         let Kamu = (randomkamu * 1)
         let count = args[0]
