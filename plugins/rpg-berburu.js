@@ -5,19 +5,19 @@ let handler = async (m, { conn }) => {
 let name = conn.getName(m.sender)
     let user = global.db.data.users[m.sender]
     
-    if (new Date - global.db.data.users[m.sender].lastberburu > 3600000) {
-		let randomaku1 = `${Math.floor(Math.random() * 10)}`
-		let randomaku2 = `${Math.floor(Math.random() * 10)}`
-		let randomaku4 = `${Math.floor(Math.random() * 10)}`
-		let randomaku3 = `${Math.floor(Math.random() * 10)}`
-		let randomaku5 = `${Math.floor(Math.random() * 10)}`
-		let randomaku6 = `${Math.floor(Math.random() * 10)}`
+    if (new Date - global.db.data.users[m.sender].lastberburu > 3900000) {
+		let randomaku1 = `${Math.floor(Math.random() * 5)}`
+		let randomaku2 = `${Math.floor(Math.random() * 7)}`
+		let randomaku4 = `${Math.floor(Math.random() * 4)}`
+		let randomaku3 = `${Math.floor(Math.random() * 4)}`
+		let randomaku5 = `${Math.floor(Math.random() * 8)}`
+		let randomaku6 = `${Math.floor(Math.random() * 2)}`
 		let randomaku7 = `${Math.floor(Math.random() * 10)}`
-		let randomaku8 = `${Math.floor(Math.random() * 10)}`
-		let randomaku9 = `${Math.floor(Math.random() * 10)}`
-		let randomaku10 = `${Math.floor(Math.random() * 10)}`
-		let randomaku11 = `${Math.floor(Math.random() * 10)}`
-		let randomaku12 = `${Math.floor(Math.random() * 10)}`
+		let randomaku8 = `${Math.floor(Math.random() * 2)}`
+		let randomaku9 = `${Math.floor(Math.random() * 3)}`
+		let randomaku10 = `${Math.floor(Math.random() * 1)}`
+		let randomaku11 = `${Math.floor(Math.random() * 6)}`
+		let randomaku12 = `${Math.floor(Math.random() * 3)}`
 			.trim()
 
 		let rbrb1 = (randomaku1 * 1)
@@ -79,7 +79,7 @@ let name = conn.getName(m.sender)
 		}, 18000)
 
 		setTimeout(() => {
-			m.reply('Dorr🔥')
+			m.reply('Duar Headshot')
 		}, 15000)
 
 		setTimeout(() => {
@@ -91,7 +91,7 @@ let name = conn.getName(m.sender)
 		}, 0)
 		user.lastberburu = new Date * 1
 	} else conn.sendButton(m.chat, `\n*Sepertinya Anda Sudah Kecapekan*\n*Silahkan Istirahat dulu sekitar ${timers}*\n*Untuk bisa melanjutkan berburu*\n`, author, null, [
-		['Kandang', '.kandang']
+		['Kandang Ku', '.kandang']
 	], m)
 }
 handler.help = ['berburu']
