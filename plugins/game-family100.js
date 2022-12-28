@@ -27,5 +27,6 @@ handler.help = ['family100']
 handler.tags = ['game']
 handler.command = /^family100$/i
 handler.group = true
+handler.limit = 3
 
 export default handler
