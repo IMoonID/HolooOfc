@@ -64,7 +64,7 @@ let ps = groupMetadata.participants.map(v => v.id)
 }
 handler.help = ['tembak *@tag*']
 handler.tags = ['jadian']
-handler.command = /^(tembak|jadian)$/i
+handler.command = /^(tembak)$/i
 handler.group = true
 
 export default handler
