@@ -43,8 +43,7 @@ Contoh: .menfess 628xxxxxxxxxx|ihacoy`
 handler.help = ['menfess nomor|pesan']
 handler.tags = ['menbalas']
 
-handler.command = /^(menfess|confess|menfes|confes)$/i
-handler.limit = true
+handler.command = /^(menfess|menfess|pesanmenfess)$/i
 handler.private = true
 
 export default handler
