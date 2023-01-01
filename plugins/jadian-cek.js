@@ -51,5 +51,6 @@ let handler = async (m, { conn, usedPrefix, text }) => {
 handler.help = ['cekpacar']
 handler.tags = ['jadian']
 handler.command = /^(cekpacar)$/i
+handler.group = true
 
 export default handler
