@@ -1,7 +1,7 @@
 import { tebakkata } from '@bochilteam/scraper'
 
 let timeout = 120000
-let poin = 300
+let poin = 200
 let handler = async (m, { conn, usedPrefix }) => {
     conn.tebakkata = conn.tebakkata ? conn.tebakkata : {}
     let id = m.chat
