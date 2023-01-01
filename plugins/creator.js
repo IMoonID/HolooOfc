@@ -8,27 +8,24 @@ let handler  = async (m, { conn, command, args, usedPrefix, DevMode }) => {
   let nowner = `https://wa.me/${nomorown.split`@`[0]}`
   let teksnomor = `Creator/Owner Bot
 https://wa.me/${nomorown.split`@`[0]} ✦
-------- ${nameown} -------
+
+Nama Owner: ${nameown}
 
 *Catatan
 • Jangan spam owner
-• Jangan telepon owner
-
-Note:
-Owner -1 Cewek
-
+• Jangan telepon Owner
 Thanks ~
 `
 
 //------------ BIO
 let ppown = await conn.profilePictureUrl(nomorown + '@s.whatsapp.net', 'image').catch(_ => hwaifu[1]) 
 let teksbio = `No Bio 😶`
-  let teks = 'Pilih dibawah kak ! o(〃＾▽＾〃)o'
+  let teks = 'Pilih dibawah'
 const sections = [
    {
 	title: `${htjava} Creator –––––––––·•`,
 	rows: [
-	    {title: "Nomor Owner ❗", rowId: ".owner nomor"},
+	    {title: "Nomor Owner", rowId: ".owner nomor"},
 	]
   },
 ]
