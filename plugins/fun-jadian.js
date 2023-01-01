@@ -5,14 +5,14 @@ function handler(m, { groupMetadata }) {
     let b
     do b = ps.getRandom()
     while (b === a)
-    m.reply(`${toM(a)} ❤️ ${toM(b)}`, null, {
+    m.reply(`\n\n\n${toM(a)} 💖 ${toM(b)}\n\n\n`, null, {
         mentions: [a, b]
     })
 }
 handler.help = ['jadian']
 handler.tags = ['main', 'fun']
 handler.command = ['jadian']
-
 handler.group = true
+handler.limit = true
 
 export default handler
