@@ -204,58 +204,139 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname, args }) => {
     let mpt = clockString(_mpt)
       const sections = [
    {
-	title: `${htki} ▮𝗦𝘁𝗮𝘁𝘂𝘀 」 ${htka}`,
+	title: `┈ ⋞ 〈 1 〉 ⋟ ┈`,
 	rows: [
-	    {title: `📙)ഒ Info Bot`, rowId: ".botinfo", description: "✧ Info nya Holo Bot ><"},
-	    {title: `☠️)ഒ Owner`, rowId: ".owner", description: "✧ Ini Room Developer ku ^~^"},
-            {title: `🗣)ഒ Request Fitur`, rowId: ".request", description: "✧ Request Fitur Buat Next Update"},
-	{title: `⚡)ഒ Speed`, rowId: ".speed", description: "✧ Kecepatan Respon 赤 Holo Bot..."},
-	]
-    },{
-	title: `${htki} ▮𝗖𝗮𝘁𝗲𝗴𝗼𝗿𝘆 」 ${htka}`,
+	    {title: `Menu Ke 1`, rowId: ".? all", description: "Desc: Semua Menu"},
+  	]
+	},{
+	title: `┈ ⋞ 〈 2 〉 ⋟ ┈`,
 	rows: [
-	    {title: `🔖 〉ɞ 『 Sewa BOT 』`, rowId: ".sewabot", description: "✧ Menampilkan list harga sewa BOT"},
-	    {title: `🌟 〉ɞ 『 UP Premium 』`, rowId: ".sewabot", description: "✧ Menampilkan list harga upgrade premium"},
-	    {title: `🥞 〉ɞ 『 Get Hadiah 』`, rowId: ".daily", description: '✧ Mau hadiah nggak kak?... >.<'},
-	    {title: `💵 ∫ » Donasi «`, rowId: ".donasi", description: '✧ Support Holo Bot agar on 1 Minggu non stop'},
-	{title: `✨ 〉ɞ 『 Rating 』`, rowId: ".rate", description: '✧ Kasih rate tinggi yaa'},    
-	{title: `📷️ 〉ɞ 『 My Profile 』`, rowId: ".profile", description: '✧ Siapa ya kamu?...'},
+	    {title: `Menu Ke 2`, rowId: ".? rpg", description: "Desc: Rpg Menu"},
 	]
 	},{
-	title: `${htki} ▮𝗠𝗲𝗻𝘂 ${htka}`,
-	rows: [
-	    {title: `⫹🗒️ › 𐐪-〚 All Menu 〛-𐑂`, rowId: ".? all", description: "╰► Langsung Semua Menu"},
-	    {title: `⫹🌱 › 𐐪-〚 Rpg 〛-𐑂`, rowId: ".? rpg", description: "╰► Calon anak petualang nih... -𐑂"},
-	{title: `⫹✨ › 𐐪-〚 Exp 〛-𐑂`, rowId: ".? xp", description: "╰► Naikin level kamu"},
-	{title: `⫹🎮 › 𐐪-〚 Game 〛-𐑂`, rowId: ".? game", description: "╰► Bg kamu main game apa?.... >-<"},
-	{title: `⫹🧩 › 𐐪-〚 Fun 〛-𐑂`, rowId: ".? fun", description: "╰► Gabut ya bang?"},
-	{title: `⫹🐚 › 𐐪-〚 Kerang 〛-𐑂`, rowId: ".? kerangajaib", description: "╰► Mau tanya apa sih bg?..."},
-	{title: `⫹📑 › 𐐪-〚 Quotes 〛-𐑂`, rowId: ".? quotes", description: "╰► Ada yg mau nyari topik nih... >-<"},
-	{title: `⫹⛩️ › 𐐪-〚 Anime 〛-𐑂`, rowId: ".? anime", description: "╰► Wibuu...-𐑂"},
-	{title: `⫹🔞 › 𐐪-〚 Nsfw 〛-𐑂`, rowId: ".? nsfw", description: "╰► Fitur Khusus 18 Ke Atas."},
-	{title: `⫹📚 › 𐐪-〚 Edukasi 〛-𐑂`, rowId: ".? edukasi", description: "╰► Belajar edukasi dari fitur bot..."},
-	{title: `⫹🌟 › 𐐪-〚 Premium 〛-𐑂`, rowId: ".? premium", description: "╰► Hanya khusus users premium..."},
-	{title: `⫹🎭 › 𐐪-〚 Anonymous chat 〛-𐑂`, rowId: ".? anonymous", description: "╰► Mau ngomong sama mantan kah? >.<"},
-	{title: `⫹☪️ › 𐐪-〚 Islamic 〛-𐑂`, rowId: ".? quran", description: "╰► Tobat ya kak..."},
-	{title: `⫹🌐 › 𐐪-〚 Internet 〛-𐑂`, rowId: ".? internet", description: "╰► Ga ada google ya kak..."},
-	{title: `⫹📤️ › 𐐪-〚 Downloader 〛-𐑂`, rowId: ".? downloader", description: "╰► Jangan download yg aneh-aneh, Xixixi (≧▽≦)"},
-	{title: `⫹🃏 › 𐐪-〚 Stikers 〛-𐑂`, rowId: ".? stiker", description: "╰► Kalau bikin sticker jangan di spam ya kak..."},
-	{title: `⫹✏️ › 𐐪-〚 Nulis 〛-𐑂`, rowId: ".? nulis", description: "╰► Hati-hati ke tawan bu sri..."},
-	{title: `⫹🎦 › 𐐪-〚 Preset AM 〛-𐑂`, rowId: ".presetmenu", description: "╰► Mau Ngedit Ya ></"},
-	{title: `⫹🦄 › 𐐪-〚 Group 〛-𐑂`, rowId: ".? group", description: "╰► Menu settingan buat group mu kak -??"},
-	{title: `⫹👑 › 𐐪-〚 Admin 〛-𐑂`, rowId: ".? admin", description: "╰► Yg bukan admin jangan make fitur ini >-<"},
-	{title: `⫹🗃️️ › 𐐪-〚 Database 〛-𐑂`, rowId: ".? database", description: "╰► Database menu"},
-	{title: `⫹🧰️ › 𐐪-〚 Tools 〛-𐑂`, rowId: ".? tools", description: "╰► Butuh apa aja bot akan bantu -𐑂"},
-	{title: `️️⫹❗️ › 𐐪-〚 Info 〛-𐑂`, rowId: ".? info", description: "╰► Info lowker kak?..."},
-	{title: `⫹😈 › 𐐪-〚 Owner 〛-𐑂`, rowId: ".? owner", description: "╰► Yg bukan developer gausah nge klik fitur ini !"},
-	{title: `⫹🎨 › 𐐪-〚 Maker 〛-𐑂`, rowId: ".? maker", description: "╰► Bikin logo apa ya enaknya?"},
-	{title: `⫹🛍️ › 𐐪-〚 Store 〛-𐑂`, rowId: ".? store", description: "╰► Anak jebeh ya kamu kak?"},
-	{title: `⫹🔥 › 𐐪-〚 Virtex 〛-𐑂`, rowId: ".? virus", description: "╰► Jangan kak bahaya -𐑂"},
+	title: `┈ ⋞ 〈 3 〉 ⋟ ┈`,
+	rows: [ 
+	{title: `Menu Ke 3`, rowId: ".? xp", description: "Desc: Exp Menu"},
 	]
-    },{
-	title: `${htki} ▮𝗜𝗻𝗳𝗼 」 ${htka}`,
-	rows: [
-	    {title: `🎁 ∫ » Referal code «`, rowId: ".ref", description: "✧ Bagikan code undangan biar dapat hadiah"},
+	},{
+	title: `┈ ⋞ 〈 4 〉 ⋟ ┈`,
+	rows: [ 
+	{title: `Menu Ke 4`, rowId: ".? game", description: "Desc: Game Menu"},
+	]
+	},{
+	title: `┈ ⋞ 〈 5 〉 ⋟ ┈`,
+	rows: [ 
+	{title: `Menu Ke 5`, rowId: ".? fun", description: "Desc: Fun Menu"},
+	]
+	},{
+	title: `┈ ⋞ 〈 6 〉 ⋟ ┈`,
+	rows: [ 
+	{title: `Menu Ke 6`, rowId: ".? kerangajaib", description: "Desc: Kerang Ajaib"},
+	]
+	},{
+	title: `┈ ⋞ 〈 7 〉 ⋟ ┈`,
+	rows: [ 
+	{title: `Menu Ke 7`, rowId: ".? quotes", description: "Desc: Quotes Menu"},
+	]
+	},{
+	title: `┈ ⋞ 〈 8 〉 ⋟ ┈`,
+	rows: [ 
+	{title: `Menu Ke 18`, rowId: ".? anime", description: "Desc: Anime Menu"},
+	]
+	},{
+	title: `┈ ⋞ 〈 9 〉 ⋟ ┈`,
+	rows: [     
+	{title: `Menu Ke 9`, rowId: ".? nsfw", description: "Desc: Nsfw Menu"},
+	]
+	},{
+	title: `┈ ⋞ 〈 10 〉 ⋟ ┈`,
+	rows: [ 
+	{title: `Menu Ke 10`, rowId: ".? edukasi", description: "Desc: Edukasi Menu"},
+	]
+	},{
+	title: `┈ ⋞ 〈 11 〉 ⋟ ┈`,
+	rows: [ 
+	{title: `Menu Ke 11`, rowId: ".? premium", description: "Desc: Premium Menu"},
+	]
+	},{
+	title: `┈ ⋞ 〈 12 〉 ⋟ ┈`,
+	rows: [ 
+	{title: `Menu Ke 12`, rowId: ".? anonymous", description: "Desc: Anonymous Menu"},
+	]
+	},{
+	title: `┈ ⋞ 〈 13 〉 ⋟ ┈`,
+	rows: [ 
+	{title: `Menu Ke 13`, rowId: ".? quran", description: "Desc: Islamic Menu"},
+	]
+	},{
+	title: `┈ ⋞ 〈 14〉 ⋟ ┈`,
+	rows: [ 
+	{title: `Menu Ke 14`, rowId: ".? internet", description: "Desc: Internet Menu"},
+	]
+	},{
+	title: `┈ ⋞ 〈 15 〉 ⋟ ┈`,
+	rows: [ 
+	{title: `Menu Ke 15`, rowId: ".? downloader", description: "Desc: Downloader Menu"},
+	]
+	},{
+	title: `┈ ⋞ 〈 16 〉 ⋟ ┈`,
+	rows: [ 
+	{title: `Menu Ke 16`, rowId: ".? stiker", description: "Desc: Sticker Menu"},
+	]
+	},{
+	title: `┈ ⋞ 〈 17 〉 ⋟ ┈`,
+	rows: [ 
+	{title: `Menu Ke 17`, rowId: ".? nulis", description: "Desc: Nulis Menu"},
+	]
+	},{
+	title: `┈ ⋞ 〈 18 〉 ⋟ ┈`,
+	rows: [ 
+	{title: `Menu Ke 18`, rowId: ".presetmenu", description: "Desc: Preset Menu"},
+	]
+	},{
+	title: `┈ ⋞ 〈 19 〉 ⋟ ┈`,
+	rows: [ 
+	{title: `Menu Ke 19`, rowId: ".? group", description: "Desc: Group Menu"},
+	]
+	},{
+	title: `┈ ⋞ 〈 20 〉 ⋟ ┈`,
+	rows: [ 
+	{title: `Menu Ke 20`, rowId: ".? admin", description: "Desc: Admin Menu"},
+	]
+	},{
+	title: `┈ ⋞ 〈 21 〉 ⋟ ┈`,
+	rows: [ 
+	{title: `Menu ke 21`, rowId: ".? database", description: "Desc: Database menu"},
+	]
+	},{
+	title: `┈ ⋞ 〈 22 〉 ⋟ ┈`,
+	rows: [ 
+	{title: `Menu Ke 22`, rowId: ".? tools", description: "Desc: Tools Menu"},
+	]
+	},{
+	title: `┈ ⋞ 〈 23 〉 ⋟ ┈`,
+	rows: [ 
+	{title: `️️Menu Ke 23`, rowId: ".? info", description: "Desc: Info Menu"},
+	]
+	},{
+	title: `┈ ⋞ 〈 24 〉 ⋟ ┈`,
+	rows: [ 
+	{title: `Menu Ke 24`, rowId: ".? owner", description: "Desc: Owner Menu"},
+	]
+	},{
+	title: `┈ ⋞ 〈 25 〉 ⋟ ┈`,
+	rows: [ 
+	{title: `Menu Ke 25`, rowId: ".? maker", description: "Desc: Maker Menu"},
+	]
+	},{
+	title: `┈ ⋞ 〈 26 〉 ⋟ ┈`,
+	rows: [ 
+	{title: `Menu Ke 26`, rowId: ".? store", description: "Desc: Store Menu"},
+	]
+	},{
+	title: `┈ ⋞ 〈 27 〉 ⋟ ┈`,
+	rows: [ 
+	{title: `Menu Ke 27`, rowId: ".? virus", description: "Desc: Virtex Menu"},
       ]
     },
 ]
@@ -271,7 +352,8 @@ let usrs = db.data.users[m.sender]
     let wktuwib = `${wibh} H ${wibm} M ${wibs} S`
  
 let tek = `
-        乂 Holo Bot menu
+
+
 
 ╭───────「 *Info Kamu* 」──────
 ├───────────•______________/
@@ -291,10 +373,10 @@ let tek = `
 `
 const listMessage = {
   text: tek,
-  footer: 'Jangan spam ya kak\n\n',
+  footer: 'Jika ada error hubungi developer atau owner',
   mentions: await conn.parseMention(tek),
   title: ``,
-  buttonText: `乂 Pilih menu`,
+  buttonText: `Select Menu`,
   sections
 }
   if (teks == '404') {
@@ -554,13 +636,13 @@ await conn[_0x187932(0x1c2)](m[_0x187932(0x1cf)], buttonMessage, {
 	let imgr = flaaa.getRandom()
 	let img = fs.readFileSync('./thumbnail.jpg')
 	let img2 = fs.readFileSync('./img/bawah.png')
-	return conn.sendButton(m.chat, bottime, text, `https://telegra.ph/file/46ad68c2b68e8a2352482.jpg`, [["Kembali ke list menu", _p + "holoo"], ["Donasi", _p + "donasi"], ["Sewa Bot", _p + "sewa"]], m, {
+	return conn.sendButton(m.chat, bottime, text, `https://telegra.ph/file/341cbfcd4da6cdc7d4780.jpg`, [["Kembali ke list menu", _p + "holoo"], ["Donasi", _p + "donasi"], ["Sewa Bot", _p + "sewa"]], m, {
         contextInfo: {
             externalAdReply: {
                 mediaUrl: "https://youtube.com/@MoonaHoshinova",
                 mediaType: "VIDEO",
                 title: `Halo ${name} ${ucpn}`,
-                body: `Runtime: ${mpt}`,
+                body: `🕰️Uptime: ${mpt}`,
                 previewType: 0,
                 thumbnail: img
             }
@@ -653,22 +735,22 @@ function clockStringP(ms) {
   let h = isNaN(ms) ? '--' : Math.floor(ms / 3600000) % 24
   let m = isNaN(ms) ? '--' : Math.floor(ms / 60000) % 60
   let s = isNaN(ms) ? '--' : Math.floor(ms / 1000) % 60
-  return [ye, ' *Years 🗓️*\n',  mo, ' *Month 🌙*\n', d, ' *Days ☀️*\n', h, ' *Hours 🕐*\n', m, ' *Minute ⏰*\n', s, ' *Second ⏱️*'].map(v => v.toString().padStart(2, 0)).join('')
+  return [ye, ' *Tahun️*\n',  mo, ' *Bulan*\n', d, ' *Hari️*\n', h, ' *Jam*\n', m, ' *Menit*\n', s, ' *Detik*'].map(v => v.toString().padStart(2, 0)).join('')
 }
 function ucapan() {
   const time = moment.tz('Asia/Jakarta').format('HH')
-  let res = "Selamat DiniHari ☀️"
+  let res = "Selamat Dini Hari️"
   if (time >= 4) {
-    res = "Selamat Pagi 🌄"
+    res = "Selamat Pagi"
   }
   if (time >= 10) {
-    res = "Selamat Siang ☀️"
+    res = "Selamat Siang️"
   }
   if (time >= 15) {
-    res = "Selamat Sore 🌇"
+    res = "Selamat Sore"
   }
   if (time >= 18) {
-    res = "Selamat Malam 🌙"
+    res = "Goodnight"
   }
   return res
 }

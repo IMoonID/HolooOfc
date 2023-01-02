@@ -15,9 +15,9 @@ let totalf = Object.values(global.plugins).filter(
 contextInfo: { externalAdReply :{
                         mediaUrl: '',
                         mediaType: 2,
-                        description: '(⁠≧⁠▽⁠≦⁠)',
-                        title: `スパムしないでください`,
-                        body: `やあ`,          previewType: 0,
+                        description: '🎉',
+                        title: `Holo Bot`,
+                        body: `Bot Whatsapp`,          previewType: 0,
                         thumbnail: await (await fetch(`https://telegra.ph/file/d475057d25d3a792f0614.jpg`)).buffer(),
                         sourceUrl: 'https://youtube.com/@MoonaHoshinova'
                       }}
