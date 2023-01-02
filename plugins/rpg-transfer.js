@@ -1,7 +1,7 @@
 const items = [
-    'money', 'bank', 'potion', 'trash', 'wood',
-    'rock', 'string', 'petFood', 'emerald',
-    'limit', 'gold', 'iron', 'common',
+    'money', 'potion', 'trash', 'wood',
+     'string', 'petFood', 'emerald',
+    'rock', 'gold', 'iron', 'common',
     'uncommon', 'mythic', 'legendary', 'pet',
 ]
 let confirmation = {}
@@ -63,11 +63,11 @@ handler.before = async m => {
         let _previous = _user[type] * 1
         user[type] -= count * 1
         _user[type] += count * 1
-        if (previous > user[type] * 1 && _previous < _user[type] * 1) m.reply(`*––––––『 Transfer 』––––––*\n*🕰️ Status:* Sukses\n*🪴️ Tipe:* ${type}${special(type)} ${rpg.emoticon(type)}\n*🧮 Jumlah:* ${count}\n*📨 Untuk:* @${(to || '').replace(/@s\.whatsapp\.net/g, '')}`, null, { mentions: [to] })
+        if (previous > user[type] * 1 && _previous < _user[type] * 1) m.reply(`*Bukti Transfer*\n*Status:* Sukses\n*tipe:* ${type}${special(type)} ${rpg.emoticon(type)}\n*Jumlah:* ${count}\n*Untuk:* @${(to || '').replace(/@s\.whatsapp\.net/g, '')}`, null, { mentions: [to] })
         else {
             user[type] = previous
             _user[type] = _previous
-            m.reply(`*––––––『 Transfer 』––––––*\n*🕰️ Status:* Gagal\n*📍 Item:* ${count} ${rpg.emoticon(type)}${type}${special(type)}\n*📨 Untuk:* @${(to || '').replace(/@s\.whatsapp\.net/g, '')}`, null, { mentions: [to] })
+            m.reply(`*Bukti Transfer*\n*Status:* Gagal\n*Item:* ${count} ${rpg.emoticon(type)}${type}${special(type)}\n*Untuk:* @${(to || '').replace(/@s\.whatsapp\.net/g, '')}`, null, { mentions: [to] })
         }
         clearTimeout(timeout)
         delete confirmation[sender]
@@ -77,7 +77,6 @@ handler.before = async m => {
 handler.help = ['transfer', 'tf'].map(v => v + ' [type] [jumlah] [@tag]')
 handler.tags = ['rpg']
 handler.command = /^(transfer|tf|kirimbarang)$/i
-
 handler.disabled = false
 
 export default handler
